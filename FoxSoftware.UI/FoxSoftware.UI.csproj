@@ -70,5 +70,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FoxSoftware.Business\FoxSoftware.Business.csproj">
+      <Project>{2c7b1991-0bf1-4ba5-a71f-42f3e4131e8c}</Project>
+      <Name>FoxSoftware.Business</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

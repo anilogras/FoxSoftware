@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FoxSoftware.Business
+namespace FoxSoftware.Entites.Concreate
 {
-    public class Class1
+    public class Firma : BaseTanimClass
     {
+
     }
 }

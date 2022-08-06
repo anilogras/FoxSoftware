@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FoxSoftware.DataAccess
+namespace FoxSoftware.Entites.Concreate
 {
-    public class Class1
+    public class AdresBilgisi : BaseClass
     {
+        public string Adres { get; set; }
     }
 }

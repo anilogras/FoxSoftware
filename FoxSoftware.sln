@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoxSoftware.DataAccess", "F
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoxSoftware.UI", "FoxSoftware.UI\FoxSoftware.UI.csproj", "{2023E5BA-6D50-4E13-8D62-769375C0B637}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoxSoftware.Ortak", "FoxSoftware.Ortak\FoxSoftware.Ortak.csproj", "{4951830C-D7D9-4BC2-A0A2-0C4EEE90E512}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{2023E5BA-6D50-4E13-8D62-769375C0B637}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2023E5BA-6D50-4E13-8D62-769375C0B637}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2023E5BA-6D50-4E13-8D62-769375C0B637}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4951830C-D7D9-4BC2-A0A2-0C4EEE90E512}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4951830C-D7D9-4BC2-A0A2-0C4EEE90E512}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4951830C-D7D9-4BC2-A0A2-0C4EEE90E512}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4951830C-D7D9-4BC2-A0A2-0C4EEE90E512}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
