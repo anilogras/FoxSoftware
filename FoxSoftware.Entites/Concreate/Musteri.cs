@@ -13,13 +13,15 @@ namespace FoxSoftware.Entites.Concreate
         {
             TelefonNolari = new List<TelefonNo>();
             Adresler = new List<AdresBilgisi>();
+            Mailler = new List<Email>();
         }
 
         public string Adi { get; set; }
         public string Soyadi{ get; set; }
         public string TCKN { get; set; }
 
-        public List<TelefonNo> TelefonNolari { get; set; }
-        public List<AdresBilgisi> Adresler { get; set; }
+         public virtual List<TelefonNo> TelefonNolari { get; set; }
+         public virtual List<AdresBilgisi> Adresler { get; set; }
+         public virtual List<Email> Mailler { get; set; }
     }
 }
