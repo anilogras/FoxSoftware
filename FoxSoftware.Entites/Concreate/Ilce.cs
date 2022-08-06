@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace FoxSoftware.Entites.Concreate
 {
-    public class AdresBilgisi : BaseClass
+    public class Ilce : BaseTanimClass
     {
-        public string Adres { get; set; }
-        
-        public virtual Ilce IlceId { get; set; }
+        public int IlId { get; set; }
+        public virtual Il Il { get; set; }
     }
 }

@@ -52,6 +52,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Context.cs" />
+    <Compile Include="Migrations\202208061408598_init.cs" />
+    <Compile Include="Migrations\202208061408598_init.designer.cs">
+      <DependentUpon>202208061408598_init.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202208061411496_init2.cs" />
+    <Compile Include="Migrations\202208061411496_init2.designer.cs">
+      <DependentUpon>202208061411496_init2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -63,6 +72,14 @@
       <Project>{a19ce817-ede0-4207-bb99-13f4c481e312}</Project>
       <Name>FoxSoftware.Entites</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202208061408598_init.resx">
+      <DependentUpon>202208061408598_init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202208061411496_init2.resx">
+      <DependentUpon>202208061411496_init2.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

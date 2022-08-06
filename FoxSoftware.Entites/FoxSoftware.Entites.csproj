@@ -32,6 +32,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -45,15 +46,31 @@
     <Compile Include="Concreate\BaseClass.cs" />
     <Compile Include="Concreate\BaseTanimClass.cs" />
     <Compile Include="Concreate\Birim.cs" />
+    <Compile Include="Concreate\Email.cs" />
     <Compile Include="Concreate\Firma.cs" />
+    <Compile Include="Concreate\Il.cs" />
+    <Compile Include="Concreate\Ilce.cs" />
     <Compile Include="Concreate\KokuTuru.cs" />
     <Compile Include="Concreate\Marka.cs" />
     <Compile Include="Concreate\Musteri.cs" />
+    <Compile Include="Concreate\SatHrkAna.cs" />
+    <Compile Include="Concreate\SatHrkDetay.cs" />
+    <Compile Include="Concreate\StokHrkAna.cs" />
+    <Compile Include="Concreate\StokHrkDetay.cs" />
     <Compile Include="Concreate\TelefonNo.cs" />
+    <Compile Include="Concreate\Urun.cs" />
+    <Compile Include="Concreate\UrunTip.cs" />
+    <Compile Include="Concreate\UrunTur.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Interfaces\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FoxSoftware.Ortak\FoxSoftware.Ortak.csproj">
+      <Project>{4951830C-D7D9-4BC2-A0A2-0C4EEE90E512}</Project>
+      <Name>FoxSoftware.Ortak</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
