@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FoxSoftware.Entites
+namespace FoxSoftware.Entites.Concreate
 {
-    public class Class1
+    public class Marka : BaseTanimClass
     {
     }
 }
