@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Context.cs" />
+    <Compile Include="DataAccessHelper.cs" />
     <Compile Include="Migrations\202208061408598_init.cs" />
     <Compile Include="Migrations\202208061408598_init.designer.cs">
       <DependentUpon>202208061408598_init.cs</DependentUpon>
@@ -66,6 +67,7 @@
     <Compile Include="Repositories\BirimRepository.cs" />
     <Compile Include="Repositories\EMailRepository.cs" />
     <Compile Include="Repositories\FirmaRepository.cs" />
+    <Compile Include="Repositories\FoxSoftWareRepository.cs" />
     <Compile Include="Repositories\GenericRepository.cs" />
     <Compile Include="Repositories\IlceRepository.cs" />
     <Compile Include="Repositories\IlRepository.cs" />
