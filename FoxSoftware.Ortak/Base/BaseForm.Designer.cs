@@ -1,5 +1,5 @@
 ﻿
-namespace FoxSoftware.UI.Base
+namespace FoxSoftware.Ortak.Base
 {
     partial class BaseForm
     {
@@ -29,17 +29,10 @@ namespace FoxSoftware.UI.Base
         /// </summary>
         private void InitializeComponent()
         {
-            this.SuspendLayout();
-            // 
-            // BaseForm
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Name = "BaseForm";
             this.Text = "BaseForm";
-            this.ResumeLayout(false);
-
         }
 
         #endregion

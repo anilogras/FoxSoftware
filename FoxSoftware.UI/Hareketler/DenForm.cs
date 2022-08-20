@@ -1,4 +1,4 @@
-﻿using FoxSoftware.UI.Base;
+﻿using FoxSoftware.Ortak.Base;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
