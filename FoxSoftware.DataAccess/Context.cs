@@ -20,7 +20,6 @@ namespace FoxSoftware.DataAccess
         {
             modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
             modelBuilder.Conventions.Remove<ManyToManyCascadeDeleteConvention>();
-
             base.OnModelCreating(modelBuilder);
         }
 
