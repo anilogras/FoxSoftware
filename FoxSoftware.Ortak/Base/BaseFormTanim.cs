@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace FoxSoftware.UI.Base
+namespace FoxSoftware.Ortak.Base
 {
-    public partial class BaseForm : Form
+    public partial class BaseFormTanim : BaseForm
     {
-        public BaseForm()
+        public BaseFormTanim()
         {
             InitializeComponent();
         }
