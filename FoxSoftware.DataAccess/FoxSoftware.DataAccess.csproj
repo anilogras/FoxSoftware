@@ -69,6 +69,17 @@
     <Compile Include="Repositories\GenericRepository.cs" />
     <Compile Include="Repositories\IlceRepository.cs" />
     <Compile Include="Repositories\IlRepository.cs" />
+    <Compile Include="Repositories\KokuTuruRepository.cs" />
+    <Compile Include="Repositories\MarkaRepository.cs" />
+    <Compile Include="Repositories\MusteriRepository.cs" />
+    <Compile Include="Repositories\SatHrkAnaRepository.cs" />
+    <Compile Include="Repositories\SatHrkDetayRepository.cs" />
+    <Compile Include="Repositories\StokHrkAnaRepository.cs" />
+    <Compile Include="Repositories\StokHrkDetayRepository.cs" />
+    <Compile Include="Repositories\TelefonNoRepository.cs" />
+    <Compile Include="Repositories\UrunRepository.cs" />
+    <Compile Include="Repositories\UrunTipRepository.cs" />
+    <Compile Include="Repositories\UrunTurRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
