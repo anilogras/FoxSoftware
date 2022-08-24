@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace FoxSoftware.UI.Hareketler
 {
-    public partial class DenForm : BaseForm
+    public partial class FrmKokuturTanim : DevExpress.XtraEditors.XtraForm
     {
-        public DenForm()
+        public FrmKokuturTanim()
         {
             InitializeComponent();
         }

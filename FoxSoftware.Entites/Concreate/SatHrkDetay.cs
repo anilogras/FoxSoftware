@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FoxSoftware.Ortak.Enums;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,6 @@ namespace FoxSoftware.Entites.Concreate
         public double BirimFiyat { get; set; }
         public double ToplamFiyat { get; set; }
         public virtual Urun Urun { get; set; }
-        public virtual Birim Birim { get; set; }
+        public SatisTipi SatisTipi { get; set; }
     }
 }

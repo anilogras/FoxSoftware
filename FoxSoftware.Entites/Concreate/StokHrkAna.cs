@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FoxSoftware.Ortak.Enums;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,5 +12,6 @@ namespace FoxSoftware.Entites.Concreate
         public int FirmaId { get; set; }
         public DateTime Tarih { get; set; }
         public virtual Firma Firma { get; set; }
+        public StokTipi StokTipi { get; set; }
     }
 }

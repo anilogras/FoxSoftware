@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -12,6 +13,8 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -33,15 +36,57 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Accessibility" />
+    <Reference Include="DevExpress.Charts.v20.1.Core, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.CodeParser.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Data.Desktop.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Data.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.DataAccess.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.DataAccess.v20.1.UI, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Diagram.v20.1.Core, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Office.v20.1.Core, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Pdf.v20.1.Core, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.PivotGrid.v20.1.Core, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Printing.v20.1.Core, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.RichEdit.v20.1.Core, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Sparkline.v20.1.Core, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Utils.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v20.1.UI, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraBars.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v20.1.Extensions, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v20.1.Wizard, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraDiagram.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGauges.v20.1.Core, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGrid.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraLayout.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraNavBar.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPivotGrid.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPrinting.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraReports.v20.1.Extensions, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraRichEdit.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraTreeList.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraVerticalGrid.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -51,13 +96,26 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Hareketler\DenForm.cs">
+    <Compile Include="Hareketler\FrmKargoTakip.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Hareketler\DenForm.Designer.cs">
-      <DependentUpon>DenForm.cs</DependentUpon>
+    <Compile Include="Hareketler\FrmKargoTakip.Designer.cs">
+      <DependentUpon>FrmKargoTakip.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Hareketler\FrmStokHrk.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Hareketler\FrmStokHrk.Designer.cs">
+      <DependentUpon>FrmStokHrk.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Hareketler\FrmSatisHrk.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Hareketler\FrmSatisHrk.Designer.cs">
+      <DependentUpon>FrmSatisHrk.cs</DependentUpon>
     </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -67,7 +125,152 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Raporlar\frmmaliyet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Raporlar\frmmaliyet.Designer.cs">
+      <DependentUpon>frmmaliyet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Raporlar\frmstokalim.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Raporlar\frmstokalim.Designer.cs">
+      <DependentUpon>frmstokalim.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Raporlar\frmgirilensiparis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Raporlar\frmgirilensiparis.Designer.cs">
+      <DependentUpon>frmgirilensiparis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Raporlar\frmpopulerurun.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Raporlar\frmpopulerurun.Designer.cs">
+      <DependentUpon>frmpopulerurun.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Raporlar\frmpopulersehir.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Raporlar\frmpopulersehir.Designer.cs">
+      <DependentUpon>frmpopulersehir.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Raporlar\SplashScreen1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Raporlar\SplashScreen1.Designer.cs">
+      <DependentUpon>SplashScreen1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Raporlar\urunturpredicate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Raporlar\urunturpredicate.Designer.cs">
+      <DependentUpon>urunturpredicate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Raporlar\musteripredicate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Raporlar\musteripredicate.Designer.cs">
+      <DependentUpon>musteripredicate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Raporlar\markapredicate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Raporlar\markapredicate.Designer.cs">
+      <DependentUpon>markapredicate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Raporlar\kokuturpredicate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Raporlar\kokuturpredicate.Designer.cs">
+      <DependentUpon>kokuturpredicate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Raporlar\firmapredicate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Raporlar\firmapredicate.Designer.cs">
+      <DependentUpon>firmapredicate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Raporlar\sathrkpredicate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Raporlar\sathrkpredicate.Designer.cs">
+      <DependentUpon>sathrkpredicate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Raporlar\birimpredicate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Raporlar\birimpredicate.Designer.cs">
+      <DependentUpon>birimpredicate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Raporlar\urunpredicate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Raporlar\urunpredicate.Designer.cs">
+      <DependentUpon>urunpredicate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Raporlar\stokhrkpredicate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Raporlar\stokhrkpredicate.Designer.cs">
+      <DependentUpon>stokhrkpredicate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tanimlamalar\FrmKokuTurTanim.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tanimlamalar\FrmKokuTurTanim.Designer.cs">
+      <DependentUpon>FrmKokuTurTanim.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tanimlamalar\FrmUrunTurTanim.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tanimlamalar\FrmUrunTurTanim.Designer.cs">
+      <DependentUpon>FrmUrunTurTanim.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tanimlamalar\FrmMarkaTanim.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tanimlamalar\FrmMarkaTanim.Designer.cs">
+      <DependentUpon>FrmMarkaTanim.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tanimlamalar\FrmBirimTanim.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tanimlamalar\FrmBirimTanim.Designer.cs">
+      <DependentUpon>FrmBirimTanim.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tanimlamalar\FrmMusteriTanim.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tanimlamalar\FrmMusteriTanim.Designer.cs">
+      <DependentUpon>FrmMusteriTanim.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tanimlamalar\FrmFirmaTanim.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tanimlamalar\FrmFirmaTanim.Designer.cs">
+      <DependentUpon>FrmFirmaTanim.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tanimlamalar\FrmUrunTanim.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tanimlamalar\FrmUrunTanim.Designer.cs">
+      <DependentUpon>FrmUrunTanim.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UIHelper.cs" />
+    <EmbeddedResource Include="Hareketler\FrmKargoTakip.resx">
+      <DependentUpon>FrmKargoTakip.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hareketler\FrmStokHrk.resx">
+      <DependentUpon>FrmStokHrk.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hareketler\FrmSatisHrk.resx">
+      <DependentUpon>FrmSatisHrk.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.tr-TR.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
@@ -79,7 +282,75 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Raporlar\frmmaliyet.resx">
+      <DependentUpon>frmmaliyet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\frmstokalim.resx">
+      <DependentUpon>frmstokalim.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\frmgirilensiparis.resx">
+      <DependentUpon>frmgirilensiparis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\frmpopulerurun.resx">
+      <DependentUpon>frmpopulerurun.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\frmpopulersehir.resx">
+      <DependentUpon>frmpopulersehir.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\SplashScreen1.resx">
+      <DependentUpon>SplashScreen1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\urunturpredicate.resx">
+      <DependentUpon>urunturpredicate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\musteripredicate.resx">
+      <DependentUpon>musteripredicate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\markapredicate.resx">
+      <DependentUpon>markapredicate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\kokuturpredicate.resx">
+      <DependentUpon>kokuturpredicate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\firmapredicate.resx">
+      <DependentUpon>firmapredicate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\sathrkpredicate.resx">
+      <DependentUpon>sathrkpredicate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\birimpredicate.resx">
+      <DependentUpon>birimpredicate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\urunpredicate.resx">
+      <DependentUpon>urunpredicate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\stokhrkpredicate.resx">
+      <DependentUpon>stokhrkpredicate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tanimlamalar\FrmKokuTurTanim.resx">
+      <DependentUpon>FrmKokuTurTanim.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tanimlamalar\FrmUrunTurTanim.resx">
+      <DependentUpon>FrmUrunTurTanim.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tanimlamalar\FrmMarkaTanim.resx">
+      <DependentUpon>FrmMarkaTanim.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tanimlamalar\FrmBirimTanim.resx">
+      <DependentUpon>FrmBirimTanim.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tanimlamalar\FrmMusteriTanim.resx">
+      <DependentUpon>FrmMusteriTanim.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tanimlamalar\FrmFirmaTanim.resx">
+      <DependentUpon>FrmFirmaTanim.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tanimlamalar\FrmUrunTanim.resx">
+      <DependentUpon>FrmUrunTanim.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -94,13 +365,36 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Tanimlamalar\" />
+    <None Include="Resources\fox_icoon.png" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\FoxSoftware.Business\FoxSoftware.Business.csproj">
+      <Project>{2C7B1991-0BF1-4BA5-A71F-42F3E4131E8C}</Project>
+      <Name>FoxSoftware.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FoxSoftware.DataAccess\FoxSoftware.DataAccess.csproj">
+      <Project>{2AE47650-7A11-4910-9446-6FDB32C433F8}</Project>
+      <Name>FoxSoftware.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FoxSoftware.Entites\FoxSoftware.Entites.csproj">
+      <Project>{A19CE817-EDE0-4207-BB99-13F4C481E312}</Project>
+      <Name>FoxSoftware.Entites</Name>
+    </ProjectReference>
     <ProjectReference Include="..\FoxSoftware.Ortak\FoxSoftware.Ortak.csproj">
       <Project>{4951830C-D7D9-4BC2-A0A2-0C4EEE90E512}</Project>
       <Name>FoxSoftware.Ortak</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pngegg.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
 </Project>

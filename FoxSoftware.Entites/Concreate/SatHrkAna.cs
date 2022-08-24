@@ -16,5 +16,6 @@ namespace FoxSoftware.Entites.Concreate
         public string KargoTakipNo { get; set; }
         public virtual Musteri Musteri { get; set; }
         public KargoDurumu KargoDurumu { get; set; }
+        public SatisTipi SatisTipi { get; set; }
     }
 }

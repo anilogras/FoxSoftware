@@ -53,13 +53,13 @@
   <ItemGroup>
     <Compile Include="Context.cs" />
     <Compile Include="DataAccessHelper.cs" />
-    <Compile Include="Migrations\202208061408598_init.cs" />
-    <Compile Include="Migrations\202208061408598_init.designer.cs">
-      <DependentUpon>202208061408598_init.cs</DependentUpon>
+    <Compile Include="Migrations\202208231209233_m1.cs" />
+    <Compile Include="Migrations\202208231209233_m1.designer.cs">
+      <DependentUpon>202208231209233_m1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202208061411496_init2.cs" />
-    <Compile Include="Migrations\202208061411496_init2.designer.cs">
-      <DependentUpon>202208061411496_init2.cs</DependentUpon>
+    <Compile Include="Migrations\202208240650583_m3.cs" />
+    <Compile Include="Migrations\202208240650583_m3.designer.cs">
+      <DependentUpon>202208240650583_m3.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -94,11 +94,11 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202208061408598_init.resx">
-      <DependentUpon>202208061408598_init.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202208231209233_m1.resx">
+      <DependentUpon>202208231209233_m1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202208061411496_init2.resx">
-      <DependentUpon>202208061411496_init2.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202208240650583_m3.resx">
+      <DependentUpon>202208240650583_m3.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
