@@ -1,6 +1,7 @@
 ﻿using FoxSoftware.Entites.Concreate;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data.Entity;
 using System.Linq;
 using System.Text;
@@ -13,6 +14,15 @@ namespace FoxSoftware.DataAccess.Repositories
         public StokHrkAnaRepository(DbContext context) : base(context)
         {
 
+
+        }
+
+        public StokHrkAna CreateNewModel()
+        {
+            StokHrkAna ana = new StokHrkAna();
+            ana.StokHrkDetaylar = new BindingList<StokHrkDetay>();
+
+            return ana;
         }
     }
 }

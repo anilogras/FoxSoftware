@@ -66,6 +66,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Base\BaseClass.cs" />
+    <Compile Include="Base\BaseTanimClass.cs" />
     <Compile Include="Base\BaseForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,14 +80,17 @@
     <Compile Include="Base\BaseFormTanim.Designer.cs">
       <DependentUpon>BaseFormTanim.cs</DependentUpon>
     </Compile>
+    <Compile Include="Base\ViewFormModel.cs" />
     <Compile Include="Enums\Cinsiyet.cs" />
-    <Compile Include="Enums\KargoDurumu.cs" />
     <Compile Include="Enums\SatisTipi.cs" />
     <Compile Include="Enums\StokTipi.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="statikOrtak.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Base\BaseForm.resx">
+      <DependentUpon>BaseForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
   </ItemGroup>
   <ItemGroup>

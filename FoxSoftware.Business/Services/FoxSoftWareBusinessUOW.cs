@@ -6,6 +6,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace FoxSoftware.Business.Services
 {
@@ -34,16 +35,14 @@ namespace FoxSoftware.Business.Services
             SatHrkDetayRepository = new SatHrkDetayRepository(_context);
             TelefonNoRepository = new TelefonNoRepository(_context);
             UrunRepository = new UrunRepository(_context);
-            urunTipRepository = new UrunTipRepository(_context);
             UrunTurRepository = new UrunTurRepository(_context);
             StokHrkAnaRepository = new StokHrkAnaRepository(_context);
             StokHrkDetayRepository = new StokHrkDetayRepository(_context);
             BirimRepository = new BirimRepository(_context);
-            BirimRepository = new BirimRepository(_context);
         }
         public BirimRepository BirimRepository { get; set; }
         public AdresBilgisiRepository AdresBilgisiRepository { get; set; }
-        public EMailRepository EMailRepository{ get; set; }
+        public EMailRepository EMailRepository { get; set; }
         public FirmaRepository FirmaRepository { get; set; }
         public IlceRepository IlceRepository { get; set; }
         public IlRepository IlRepository { get; set; }
@@ -52,16 +51,27 @@ namespace FoxSoftware.Business.Services
         public MusteriRepository MusteriRepository { get; set; }
         public SatHrkAnaRepository SatHrkAnaRepository { get; set; }
         public SatHrkDetayRepository SatHrkDetayRepository { get; set; }
-        public TelefonNoRepository TelefonNoRepository{ get; set; }
-        public UrunRepository UrunRepository{ get; set; }
-        public UrunTipRepository urunTipRepository{ get; set; }
-        public UrunTurRepository UrunTurRepository{ get; set; }
+        public TelefonNoRepository TelefonNoRepository { get; set; }
+        public UrunRepository UrunRepository { get; set; }
+        public UrunTurRepository UrunTurRepository { get; set; }
         public StokHrkAnaRepository StokHrkAnaRepository { get; set; }
         public StokHrkDetayRepository StokHrkDetayRepository { get; set; }
 
+        public DbContext GetContext()
+        {
+            return _context;
+        }
         public int Complete()
         {
-            return _context.SaveChanges();
+            try
+            {
+                return _context.SaveChanges();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Kayıt yapılırken hata oluştu lütfen ekranı kapatıp tekrar deneyiniz.", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                throw;
+            }
         }
     }
 }

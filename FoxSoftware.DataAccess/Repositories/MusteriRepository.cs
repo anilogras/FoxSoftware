@@ -14,5 +14,13 @@ namespace FoxSoftware.DataAccess.Repositories
         {
 
         }
+        public Musteri CreateNewModel() 
+        {
+            Musteri musteri = new Musteri();
+            musteri.Adres = new AdresBilgisi();
+            musteri.Mail = new Email();
+            musteri.TelefonNo = new TelefonNo();
+            return musteri;
+        }
     }
 }

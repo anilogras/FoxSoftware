@@ -29,6 +29,7 @@ namespace FoxSoftware.UI.Raporlar
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::FoxSoftware.UI.Raporlar.SplashScreen1), true, true);
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.dataLayoutControl1 = new DevExpress.XtraDataLayout.DataLayoutControl();
@@ -39,6 +40,10 @@ namespace FoxSoftware.UI.Raporlar
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.urunTurBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.colAdi = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSilinmis = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).BeginInit();
             this.dataLayoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -47,7 +52,12 @@ namespace FoxSoftware.UI.Raporlar
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.urunTurBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // splashScreenManager1
+            // 
+            splashScreenManager1.ClosingDelay = 500;
             // 
             // ribbonPage2
             // 
@@ -68,6 +78,7 @@ namespace FoxSoftware.UI.Raporlar
             // 
             // gridControl1
             // 
+            this.gridControl1.DataSource = this.urunTurBindingSource;
             this.gridControl1.Location = new System.Drawing.Point(12, 38);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
@@ -78,8 +89,13 @@ namespace FoxSoftware.UI.Raporlar
             // 
             // gridView1
             // 
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colAdi,
+            this.colId,
+            this.colSilinmis});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
+            this.gridView1.DoubleClick += new System.EventHandler(this.gridView1_DoubleClick);
             // 
             // simpleButton1
             // 
@@ -132,9 +148,28 @@ namespace FoxSoftware.UI.Raporlar
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
             // 
-            // splashScreenManager1
+            // urunTurBindingSource
             // 
-            splashScreenManager1.ClosingDelay = 500;
+            this.urunTurBindingSource.DataSource = typeof(FoxSoftware.Entites.Concreate.UrunTur);
+            // 
+            // colAdi
+            // 
+            this.colAdi.FieldName = "Adi";
+            this.colAdi.Name = "colAdi";
+            this.colAdi.Visible = true;
+            this.colAdi.VisibleIndex = 1;
+            // 
+            // colId
+            // 
+            this.colId.FieldName = "Id";
+            this.colId.Name = "colId";
+            this.colId.Visible = true;
+            this.colId.VisibleIndex = 0;
+            // 
+            // colSilinmis
+            // 
+            this.colSilinmis.FieldName = "Silinmis";
+            this.colSilinmis.Name = "colSilinmis";
             // 
             // urunturpredicate
             // 
@@ -155,6 +190,7 @@ namespace FoxSoftware.UI.Raporlar
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.urunTurBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -169,5 +205,9 @@ namespace FoxSoftware.UI.Raporlar
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
+        private System.Windows.Forms.BindingSource urunTurBindingSource;
+        private DevExpress.XtraGrid.Columns.GridColumn colAdi;
+        private DevExpress.XtraGrid.Columns.GridColumn colId;
+        private DevExpress.XtraGrid.Columns.GridColumn colSilinmis;
     }
 }

@@ -43,8 +43,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Concreate\AdresBilgisi.cs" />
-    <Compile Include="Concreate\BaseClass.cs" />
-    <Compile Include="Concreate\BaseTanimClass.cs" />
     <Compile Include="Concreate\Birim.cs" />
     <Compile Include="Concreate\Email.cs" />
     <Compile Include="Concreate\Firma.cs" />
@@ -59,7 +57,6 @@
     <Compile Include="Concreate\StokHrkDetay.cs" />
     <Compile Include="Concreate\TelefonNo.cs" />
     <Compile Include="Concreate\Urun.cs" />
-    <Compile Include="Concreate\UrunTip.cs" />
     <Compile Include="Concreate\UrunTur.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

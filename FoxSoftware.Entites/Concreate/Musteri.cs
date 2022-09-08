@@ -1,5 +1,7 @@
-﻿using System;
+﻿using FoxSoftware.Ortak.Base;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,17 +13,30 @@ namespace FoxSoftware.Entites.Concreate
 
         public Musteri()
         {
-            TelefonNolari = new List<TelefonNo>();
-            Adresler = new List<AdresBilgisi>();
-            Mailler = new List<Email>();
         }
 
         public string Adi { get; set; }
-        public string Soyadi{ get; set; }
+        public string Soyadi { get; set; }
         public string TCKN { get; set; }
 
-         public virtual List<TelefonNo> TelefonNolari { get; set; }
-         public virtual List<AdresBilgisi> Adresler { get; set; }
-         public virtual List<Email> Mailler { get; set; }
+        public int TelefonNoId { get; set; }
+        public virtual TelefonNo TelefonNo { get; set; }
+
+        public int AdresId { get; set; }
+        public virtual AdresBilgisi Adres { get; set; }
+
+        public int MailId { get; set; }
+        public virtual Email Mail { get; set; }
+
+
+        [NotMapped]
+        public string MusteriAdSoyad
+        {
+            get
+            {
+                return Adi + " " + Soyadi;
+            }
+        }
+
     }
 }

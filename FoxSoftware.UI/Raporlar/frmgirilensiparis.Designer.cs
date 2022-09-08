@@ -29,12 +29,14 @@ namespace FoxSoftware.UI.Raporlar
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::FoxSoftware.UI.Raporlar.SplashScreen1), true, true);
             this.dataLayoutControl1 = new DevExpress.XtraDataLayout.DataLayoutControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.dateEdit1 = new DevExpress.XtraEditors.DateEdit();
             this.dateEdit2 = new DevExpress.XtraEditors.DateEdit();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnRapor = new DevExpress.XtraEditors.SimpleButton();
             this.comboBoxEdit1 = new DevExpress.XtraEditors.ComboBoxEdit();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -45,6 +47,7 @@ namespace FoxSoftware.UI.Raporlar
             this.emptySpaceItem4 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.satHrkAnaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).BeginInit();
             this.dataLayoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -63,14 +66,19 @@ namespace FoxSoftware.UI.Raporlar
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.satHrkAnaBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // splashScreenManager1
+            // 
+            splashScreenManager1.ClosingDelay = 500;
             // 
             // dataLayoutControl1
             // 
             this.dataLayoutControl1.Controls.Add(this.gridControl1);
             this.dataLayoutControl1.Controls.Add(this.dateEdit1);
             this.dataLayoutControl1.Controls.Add(this.dateEdit2);
-            this.dataLayoutControl1.Controls.Add(this.simpleButton1);
+            this.dataLayoutControl1.Controls.Add(this.btnRapor);
             this.dataLayoutControl1.Controls.Add(this.comboBoxEdit1);
             this.dataLayoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataLayoutControl1.Location = new System.Drawing.Point(0, 0);
@@ -106,6 +114,8 @@ namespace FoxSoftware.UI.Raporlar
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateEdit1.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateEdit1.Properties.MinValue = new System.DateTime(2010, 1, 1, 0, 0, 0, 0);
+            this.dateEdit1.Properties.Name = "dateEdit1";
             this.dateEdit1.Size = new System.Drawing.Size(100, 20);
             this.dateEdit1.StyleController = this.dataLayoutControl1;
             this.dateEdit1.TabIndex = 4;
@@ -125,18 +135,18 @@ namespace FoxSoftware.UI.Raporlar
             this.dateEdit2.StyleController = this.dataLayoutControl1;
             this.dateEdit2.TabIndex = 5;
             // 
-            // simpleButton1
+            // btnRapor
             // 
-            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F);
-            this.simpleButton1.Appearance.Options.UseFont = true;
-            this.simpleButton1.Location = new System.Drawing.Point(12, 60);
-            this.simpleButton1.MaximumSize = new System.Drawing.Size(167, 0);
-            this.simpleButton1.MinimumSize = new System.Drawing.Size(167, 0);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(167, 22);
-            this.simpleButton1.StyleController = this.dataLayoutControl1;
-            this.simpleButton1.TabIndex = 6;
-            this.simpleButton1.Text = "Raporla";
+            this.btnRapor.Appearance.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F);
+            this.btnRapor.Appearance.Options.UseFont = true;
+            this.btnRapor.Location = new System.Drawing.Point(12, 60);
+            this.btnRapor.MaximumSize = new System.Drawing.Size(167, 0);
+            this.btnRapor.MinimumSize = new System.Drawing.Size(167, 0);
+            this.btnRapor.Name = "btnRapor";
+            this.btnRapor.Size = new System.Drawing.Size(167, 22);
+            this.btnRapor.StyleController = this.dataLayoutControl1;
+            this.btnRapor.TabIndex = 6;
+            this.btnRapor.Text = "Raporla";
             // 
             // comboBoxEdit1
             // 
@@ -146,9 +156,13 @@ namespace FoxSoftware.UI.Raporlar
             this.comboBoxEdit1.Name = "comboBoxEdit1";
             this.comboBoxEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.comboBoxEdit1.Properties.Items.AddRange(new object[] {
+            "Parfum",
+            "Kozmetik"});
             this.comboBoxEdit1.Size = new System.Drawing.Size(100, 20);
             this.comboBoxEdit1.StyleController = this.dataLayoutControl1;
             this.comboBoxEdit1.TabIndex = 8;
+            this.comboBoxEdit1.EditValueChanged += new System.EventHandler(this.comboBoxEdit1_EditValueChanged);
             // 
             // Root
             // 
@@ -191,7 +205,7 @@ namespace FoxSoftware.UI.Raporlar
             // 
             // layoutControlItem3
             // 
-            this.layoutControlItem3.Control = this.simpleButton1;
+            this.layoutControlItem3.Control = this.btnRapor;
             this.layoutControlItem3.Location = new System.Drawing.Point(0, 48);
             this.layoutControlItem3.Name = "layoutControlItem3";
             this.layoutControlItem3.Size = new System.Drawing.Size(171, 26);
@@ -242,6 +256,10 @@ namespace FoxSoftware.UI.Raporlar
             this.layoutControlItem5.Text = "Urun Tipi";
             this.layoutControlItem5.TextSize = new System.Drawing.Size(55, 14);
             // 
+            // satHrkAnaBindingSource
+            // 
+            this.satHrkAnaBindingSource.DataSource = typeof(FoxSoftware.Entites.Concreate.SatHrkAna);
+            // 
             // frmgirilensiparis
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -270,6 +288,7 @@ namespace FoxSoftware.UI.Raporlar
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.satHrkAnaBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -284,7 +303,7 @@ namespace FoxSoftware.UI.Raporlar
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.SimpleButton btnRapor;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem2;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
@@ -292,5 +311,6 @@ namespace FoxSoftware.UI.Raporlar
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
         private DevExpress.XtraEditors.ComboBoxEdit comboBoxEdit1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
+        private System.Windows.Forms.BindingSource satHrkAnaBindingSource;
     }
 }

@@ -10,8 +10,10 @@ using System.Windows.Forms;
 
 namespace FoxSoftware.Ortak.Base
 {
-    public partial class BaseForm : Form
+    public partial class BaseForm : DevExpress.XtraEditors.XtraForm
     {
+        public BaseClass AnaModel { get; set; }
+
         public BaseForm()
         {
             InitializeComponent();

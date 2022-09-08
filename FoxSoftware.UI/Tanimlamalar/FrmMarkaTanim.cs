@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -16,35 +17,38 @@ namespace FoxSoftware.UI.Tanimlamalar
 {
     public partial class FrmMarkaTanim : DevExpress.XtraEditors.XtraForm
     {
-        public FrmMarkaTanim()
+        FoxSoftWareBusinessUOW _BusinesUOW;
+        private Marka _model;
+        private DbContext _context;
+        public FrmMarkaTanim(ViewFormModel<Marka> ViewForm)
         {
             InitializeComponent();
+            _model = ViewForm.CreateModel();
+            _context = ViewForm.Context;
+            _BusinesUOW = new FoxSoftWareBusinessUOW(_context);
+            markaBindingSource.DataSource = ViewForm.Model;
+        }
+        private void FrmMarkaTanim_Load(object sender, EventArgs e)
+        {
+            
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-            var res = MessageBox.Show("Değişiklikler kaydedilsin mi?", "UYARI", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (res == DialogResult.Yes)
+            if (AdiTextEdit.Text == null || AdiTextEdit.Text.Trim() == "")
             {
-                FoxSoftWareBusinessUOW _BusinesUOW = new FoxSoftWareBusinessUOW(DataAccessHelper.NewContext);
-
-                _BusinesUOW.MarkaRepository.Add(new Marka
-                {
-                    Adi = textEdit2.Text,
-                    Silinmis = false
-                });
-
-                int saveRes = _BusinesUOW.Complete();
-
-                if (saveRes > 0)
-                {
-                    this.DialogResult = DialogResult.OK;
-                    this.Close();
-                }
+                var res = UIHelper.MesajKayitEdemez();
             }
             else
             {
-
+                var res = UIHelper.KayitEkle();
+                if (res == DialogResult.Yes)
+                {
+                    var save = _context.SaveChanges();
+                    var r = UIHelper.MesajVer();
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
+                }
             }
         }
     }

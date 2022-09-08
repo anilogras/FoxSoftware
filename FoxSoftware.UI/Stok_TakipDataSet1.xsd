@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Stok_TakipDataSet1" targetNamespace="http://tempuri.org/Stok_TakipDataSet1.xsd" xmlns:mstns="http://tempuri.org/Stok_TakipDataSet1.xsd" xmlns="http://tempuri.org/Stok_TakipDataSet1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="Stok_TakipConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="Stok_TakipConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.FoxSoftware.UI.Properties.Settings.GlobalReference.Default.Stok_TakipConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ViewCinsiyetTableAdapter" GeneratorDataComponentClassName="ViewCinsiyetTableAdapter" Name="ViewCinsiyet" UserDataComponentName="ViewCinsiyetTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="Stok_TakipConnectionString (Settings)" DbObjectName="Stok_Takip.dbo.ViewCinsiyet" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Expr1, Expr2 FROM dbo.ViewCinsiyet</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Expr1" DataSetColumn="Expr1" />
+              <Mapping SourceColumn="Expr2" DataSetColumn="Expr2" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="Stok_TakipDataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="Stok_TakipDataSet1" msprop:Generator_UserDSName="Stok_TakipDataSet1">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ViewCinsiyet" msprop:Generator_TableClassName="ViewCinsiyetDataTable" msprop:Generator_TableVarName="tableViewCinsiyet" msprop:Generator_TablePropName="ViewCinsiyet" msprop:Generator_RowDeletingName="ViewCinsiyetRowDeleting" msprop:Generator_RowChangingName="ViewCinsiyetRowChanging" msprop:Generator_RowEvHandlerName="ViewCinsiyetRowChangeEventHandler" msprop:Generator_RowDeletedName="ViewCinsiyetRowDeleted" msprop:Generator_UserTableName="ViewCinsiyet" msprop:Generator_RowChangedName="ViewCinsiyetRowChanged" msprop:Generator_RowEvArgName="ViewCinsiyetRowChangeEvent" msprop:Generator_RowClassName="ViewCinsiyetRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Expr1" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnExpr1" msprop:Generator_ColumnPropNameInRow="Expr1" msprop:Generator_ColumnPropNameInTable="Expr1Column" msprop:Generator_UserColumnName="Expr1" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="6" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Expr2" msprop:Generator_ColumnVarNameInTable="columnExpr2" msprop:Generator_ColumnPropNameInRow="Expr2" msprop:Generator_ColumnPropNameInTable="Expr2Column" msprop:Generator_UserColumnName="Expr2" type="xs:double" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

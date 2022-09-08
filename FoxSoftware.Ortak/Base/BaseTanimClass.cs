@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FoxSoftware.Entites.Concreate
+namespace FoxSoftware.Ortak.Base
 {
-    public class UrunTip : BaseTanimClass
+    public class BaseTanimClass : BaseClass
     {
+        public string Adi { get; set; }
     }
 }

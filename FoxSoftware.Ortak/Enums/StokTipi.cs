@@ -8,7 +8,7 @@ namespace FoxSoftware.Ortak.Enums
 {
     public enum StokTipi
     {
-        Parfum = 1,
-        Kozmetik = 2
+        Satis = 1,
+        Stok = 2
     }
 }

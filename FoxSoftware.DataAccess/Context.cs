@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,13 +12,31 @@ namespace FoxSoftware.DataAccess
 {
     public class Context : DbContext
     {
-        public Context() : base(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=Stok_Takip;Integrated Security =true;")
-        {
 
+        public static string _connectionString { get {return ReadDBConnection(); } }
+
+        public Context() : base(_connectionString)
+        {
+            
+        }
+        public static string ReadDBConnection()
+        {
+            string dbConfig = "";
+            string databaseYolu = @"C:\\database\\dbconfig.txt";
+            FileStream fs1 = new FileStream(databaseYolu, FileMode.Open, FileAccess.Read);
+            StreamReader sr1 = new StreamReader(fs1);
+            string yazi1 = sr1.ReadToEnd();
+            string[] satir1 = yazi1.Split(new[] { '\r', '\n' });
+            foreach (var sat1 in satir1)
+            {
+                dbConfig = sat1;
+            }
+            return @"Data Source="+dbConfig+";Initial Catalog=Stok_Takip;Integrated Security =true;";
         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+
             modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
             modelBuilder.Conventions.Remove<ManyToManyCascadeDeleteConvention>();
             base.OnModelCreating(modelBuilder);
@@ -38,7 +57,6 @@ namespace FoxSoftware.DataAccess
         public DbSet<StokHrkDetay> StokHrkDetay { get; set; }
         public DbSet<TelefonNo> TelefonNo { get; set; }
         public DbSet<Urun> Urun { get; set; }
-        public DbSet<UrunTip> UrunTip{ get; set; }
         public DbSet<UrunTur> UrunTur{ get; set; }
     }
 }

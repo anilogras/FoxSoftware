@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -18,88 +19,184 @@ namespace FoxSoftware.UI.Tanimlamalar
     public partial class FrmUrunTanim : DevExpress.XtraEditors.XtraForm
     {
         FoxSoftWareBusinessUOW _BusinesUOW;
-        public FrmUrunTanim()
+
+        private Urun _model;
+        private DbContext _context;
+        public FrmUrunTanim(ViewFormModel<Urun> ViewForm)
         {
             InitializeComponent();
-            _BusinesUOW = new FoxSoftWareBusinessUOW(DataAccessHelper.NewContext);
+            _model = ViewForm.CreateModel();
+            _context = ViewForm.Context;
+            _BusinesUOW = new FoxSoftWareBusinessUOW(_context);
+            CbSatisTipi.EditValueChanged += CbSatisTipi_EditValueChanged;
+            //CbSatisTipi.Validating += CbSatisTipi_Validating;
+            //CbSatisTipi.Validated += CbSatisTipi_Validated;
+            _model.StokTipi = StokTipi.Satis;
+
+            if (_model.Id == 0)
+            {
+                _model.SatisTipi = SatisTipi.Kozmetik;
+                _model.Cinsiyet = Cinsiyet.Erkek;
+                _model.MarkaId = 2;
+                CbSatisTipi.EditValue = 1;
+                _model.UrunTurId = 2;
+                _model.KokuTuruId = 2;
+            }
+
+
+            urunBindingSource.DataSource = _model;
+
+            _model.PropertyChanged += _model_PropertyChanged;
         }
 
-        private void simpleButton1_Click(object sender, EventArgs e)
+        private void CbSatisTipi_Validating(object sender, CancelEventArgs e)
         {
-            var res = MessageBox.Show("Değişiklikler kaydedilsin mi?", "UYARI", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (res == DialogResult.Yes)
+            e.Cancel = false;
+
+            //throw new NotImplementedException();
+        }
+
+        private void CbSatisTipi_Validated(object sender, EventArgs e)
+        {
+            //throw new NotImplementedException();
+        }
+
+        private void _model_PropertyChanged(object sender, PropertyChangedEventArgs e)
+        {
+            if (e.PropertyName == "SatisTipi")
             {
-                Urun u = new Urun()
-                {
-                    UrunTipId = Convert.ToInt32(comboBoxEdit7.EditValue),
-                    Kodu = textEdit5.Text,
-                    Adi = textEdit1.Text,
-                    BirimFiyat = Convert.ToDouble(textEdit2.Text),
-                    Maliyet = Convert.ToDouble(textEdit3.Text),
-                    BirimId = Convert.ToInt32(comboBoxEdit3.EditValue),
-                    MarkaId = Convert.ToInt32(comboBoxEdit2.EditValue),
-                    UrunTurId = Convert.ToInt32(comboBoxEdit4.EditValue),
-                    KokuTuruId = Convert.ToInt32(comboBoxEdit5.EditValue),
-                    Silinmis = false,
-                    Cinsiyet = (Cinsiyet)comboBoxEdit1.SelectedIndex+1
-                   //Cinsiyet=Convert.ToInt32(comboBoxEdit1.SelectedIndex)
-                };
-                _BusinesUOW.UrunRepository.Add(u);
-
-                int saveRes = _BusinesUOW.Complete();
-
-                if (saveRes > 0)
-                {
-                    this.DialogResult = DialogResult.OK;
-                    this.Close();
-                }
+                SatisTipiKontrol();
             }
-            else
-            {
+        }
 
-            }
+        private void CbSatisTipi_EditValueChanged(object sender, EventArgs e)
+        {
+            var asasds = CbSatisTipi.EditValue;
+            _model.SatisTipi = (SatisTipi)asasds;
+            SatisTipiKontrol();
         }
 
         private void FrmUrunTanim_Load(object sender, EventArgs e)
         {
-            comboBoxEdit7.Properties.DisplayMember = "Adi";
-            comboBoxEdit7.Properties.ValueMember = "Id";
-            comboBoxEdit7.Properties.DataSource = _BusinesUOW.urunTipRepository.GetAll().Select(x => new
+
+            btnKaydet.Click += BtnKaydet_Click;
+            lookupMarka.Properties.DisplayMember = "Adi";
+            lookupMarka.Properties.ValueMember = "Id";
+            lookupMarka.Properties.DataSource = _BusinesUOW.MarkaRepository.GetAll().Select(x => new
             {
-                x.Id,
-                x.Adi
+                Id = x.Id,
+                Adi = x.Adi
             });
-            comboBoxEdit2.Properties.DisplayMember = "Adi";
-            comboBoxEdit2.Properties.ValueMember = "Id";
-            comboBoxEdit2.Properties.DataSource = _BusinesUOW.MarkaRepository.GetAll().Select(x => new
+            lookupBirim.Properties.DisplayMember = "Adi";
+            lookupBirim.Properties.ValueMember = "Id";
+            lookupBirim.Properties.DataSource = _BusinesUOW.BirimRepository.GetAll().Select(x => new
             {
-                x.Id,
-                x.Adi
+                Id = x.Id,
+                Adi = x.Adi
             });
-            comboBoxEdit3.Properties.DisplayMember = "Adi";
-            comboBoxEdit3.Properties.ValueMember = "Id";
-            comboBoxEdit3.Properties.DataSource = _BusinesUOW.BirimRepository.GetAll().Select(x => new
+            lookupUrunTur.Properties.DisplayMember = "Adi";
+            lookupUrunTur.Properties.ValueMember = "Id";
+            lookupUrunTur.Properties.DataSource = _BusinesUOW.UrunTurRepository.GetAll().Select(x => new
             {
-                x.Id,
-                x.Adi
+                Id = x.Id,
+                Adi = x.Adi
             });
-            comboBoxEdit4.Properties.DisplayMember = "Adi";
-            comboBoxEdit4.Properties.ValueMember = "Id";
-            comboBoxEdit4.Properties.DataSource = _BusinesUOW.UrunTurRepository.GetAll().Select(x => new
+            lookupKokuTur.Properties.DisplayMember = "Adi";
+            lookupKokuTur.Properties.ValueMember = "Id";
+            lookupKokuTur.Properties.DataSource = _BusinesUOW.KokuTuruRepository.GetAll().Select(x => new
             {
-                x.Id,
-                x.Adi
+                Id = x.Id,
+                Adi = x.Adi
             });
-            comboBoxEdit5.Properties.DisplayMember = "Adi";
-            comboBoxEdit5.Properties.ValueMember = "Id";
-            comboBoxEdit5.Properties.DataSource = _BusinesUOW.KokuTuruRepository.GetAll().Select(x => new
+
+            Dictionary<int, string> stokEnumData = Enum.GetValues(typeof(StokTipi))
+              .Cast<StokTipi>().ToDictionary(x => (int)x, x => x.ToString());
+
+
+            Dictionary<int, string> cinsiyetEnumData = Enum.GetValues(typeof(Cinsiyet))
+              .Cast<Cinsiyet>().ToDictionary(x => (int)x, x => x.ToString());
+
+
+            Dictionary<int, string> satisEnumData = Enum.GetValues(typeof(SatisTipi))
+              .Cast<SatisTipi>().ToDictionary(x => (int)x, x => x.ToString());
+
+
+            CbCinsiyet.Properties.Items.AddRange(Enum.GetValues(typeof(Cinsiyet)));
+            CbSatisTipi.Properties.Items.AddRange(Enum.GetValues(typeof(SatisTipi)));
+
+            SatisTipiKontrol();
+
+        }
+        public void SatisTipiKontrol()
+        {
+            if (_model.SatisTipi == SatisTipi.Parfum)//parfum
             {
-                x.Id,
-                x.Adi
-            });
-            comboBoxEdit1.Properties.Items.Clear();
-            comboBoxEdit1.Properties.Items.AddRange(Enum.GetNames(typeof(Cinsiyet)));
-            comboBoxEdit1.SelectedIndex = 0;
+                cinsiyetLayoutControl.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
+                markaLayoutControl.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
+                urunturuLayoutControl.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
+                kokuturuLayoutControl.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
+                birimfiyatLayoutControl.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
+                maliyetLayoutControl.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
+            }
+            else if (_model.SatisTipi == SatisTipi.Kozmetik)//kozmetik
+            {
+                cinsiyetLayoutControl.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
+                markaLayoutControl.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
+                urunturuLayoutControl.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
+                kokuturuLayoutControl.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
+            }
+        }
+        private void textMaliyet_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar) && e.KeyChar != ',';
+        }
+
+        private void textBirimFiyat_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar) && e.KeyChar != ',';
+        }
+
+        public void KaydetMethod()
+        {
+            var res = UIHelper.KayitEkle();
+            if (res == DialogResult.Yes)
+            {
+                int snc = _BusinesUOW.Complete();
+                var r = UIHelper.MesajVer();
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+                //var save = _context.SaveChanges();
+                //var r = UIHelper.MesajVer();
+                //this.DialogResult = DialogResult.OK;
+                //this.Close();
+            }
+        }
+        private void BtnKaydet_Click(object sender, EventArgs e)
+        {
+            if (_model.SatisTipi == SatisTipi.Parfum)//parfüm
+            {
+                if (textUrunKodu.Text == null || textUrunKodu.Text.Trim() == "" || textUrunAdi.Text == null || textUrunAdi.Text.Trim() == "" || textBirimFiyat.Text == null || textBirimFiyat.Text.Trim() == "" || textMaliyet.Text == null || textMaliyet.Text.Trim() == "" || lookupMarka.Text.Trim() == "" || lookupUrunTur.Text.Trim() == "" || lookupKokuTur.Text.Trim() == "" || lookupBirim.Text.Trim() == "")
+                {
+                    var res = UIHelper.MesajKayitEdemez();
+                }
+                else
+                {
+                    KaydetMethod();
+                }
+
+
+            }
+            else if (_model.SatisTipi == SatisTipi.Kozmetik)//kozmetik
+            {
+                if (textBirimFiyat.Text == null || textBirimFiyat.Text.Trim() == "" || textMaliyet.Text == null || textMaliyet.Text.Trim() == "" || textUrunKodu.Text == null || textUrunKodu.Text.Trim() == "" || textUrunAdi.Text == null || textUrunAdi.Text.Trim() == "" || lookupBirim.Text.Trim() == "")
+                {
+                    var res = UIHelper.MesajKayitEdemez();
+                }
+                else
+                {
+                    KaydetMethod();
+                }
+            }
         }
     }
 }

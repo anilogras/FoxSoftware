@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -17,9 +18,16 @@ namespace FoxSoftware.UI.Tanimlamalar
 {
     public partial class FrmBirimTanim : DevExpress.XtraEditors.XtraForm
     {
-        public FrmBirimTanim()
+        FoxSoftWareBusinessUOW _BusinesUOW;
+        private Birim _model;
+        private DbContext _context;
+        public FrmBirimTanim(ViewFormModel<Birim> ViewForm)
         {
             InitializeComponent();
+            _model = ViewForm.CreateModel();
+            _context = ViewForm.Context;
+            _BusinesUOW = new FoxSoftWareBusinessUOW(_context);
+            birimBindingSource.DataSource = ViewForm.Model;
         }
 
         private void FrmBirimTanim_Load(object sender, EventArgs e)
@@ -29,33 +37,21 @@ namespace FoxSoftware.UI.Tanimlamalar
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-            var res = MessageBox.Show("Değişiklikler kaydedilsin mi?", "UYARI", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (res == DialogResult.Yes)
+            if (AdiTextEdit.Text == null || AdiTextEdit.Text.Trim() == "")
             {
-                FoxSoftWareBusinessUOW _BusinesUOW = new FoxSoftWareBusinessUOW(DataAccessHelper.NewContext);
-
-                _BusinesUOW.BirimRepository.Add(new Birim
+                var res = UIHelper.MesajKayitEdemez();
+            }
+            else
+            {
+                var res = UIHelper.KayitEkle();
+                if (res == DialogResult.Yes)
                 {
-                    Adi = textEdit2.Text,
-                    Silinmis = false
-                });
-
-                int saveRes = _BusinesUOW.Complete();
-
-                if (saveRes > 0)
-                {
+                    var save = _context.SaveChanges();
+                    var r = UIHelper.MesajVer();
                     this.DialogResult = DialogResult.OK;
                     this.Close();
                 }
             }
-            else
-            {
-
-            }
-        }
-        private void simpleButton2_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

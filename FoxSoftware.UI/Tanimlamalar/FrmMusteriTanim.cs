@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -17,82 +18,84 @@ namespace FoxSoftware.UI.Tanimlamalar
     public partial class FrmMusteriTanim : DevExpress.XtraEditors.XtraForm
     {
         FoxSoftWareBusinessUOW _BusinesUOW;
-        public FrmMusteriTanim()
+        private Musteri _model;
+        private DbContext _context;
+
+        public FrmMusteriTanim(ViewFormModel<Musteri> ViewForm)
         {
             InitializeComponent();
-            _BusinesUOW = new FoxSoftWareBusinessUOW(DataAccessHelper.NewContext);
-        }
-
-        private void simpleButton1_Click(object sender, EventArgs e)
-        {
-            var res = MessageBox.Show("Değişiklikler kaydedilsin mi?", "UYARI", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (res == DialogResult.Yes)
-            {             
-                Musteri mus = new Musteri()
-                {
-                    Adi = textEdit5.Text,
-                    Soyadi = textEdit3.Text,
-                    TCKN = textEdit4.Text,
-                    //TelefonNolari=textEdit1.Text,
-                    Silinmis = false,
-                   
-                };
-                mus.Adresler.Add(new AdresBilgisi
-                {
-                    Adres=memoEdit1.Text,
-                    IlId = Convert.ToInt32(comboBoxEdit4.EditValue),
-                    IlceId = Convert.ToInt32(comboBoxEdit5.EditValue),
-                });
-                mus.Mailler.Add(new Email()
-                {
-                    MailAdres = textEdit2.Text
-                });
-                mus.TelefonNolari.Add(new TelefonNo()
-                {
-                    No = textEdit1.Text
-                });
-                _BusinesUOW.MusteriRepository.Add(mus);
-
-                int saveRes = _BusinesUOW.Complete();
-
-                if (saveRes > 0)
-                {
-                    this.DialogResult = DialogResult.OK;
-                    this.Close();
-                }
+            _context = ViewForm.Context;
+            _BusinesUOW = new FoxSoftWareBusinessUOW(_context);
+            if (ViewForm.Model.Id == 0)
+            {
+                _model = _BusinesUOW.MusteriRepository.CreateNewModel();
             }
             else
             {
+                _model = ViewForm.Model;
 
             }
+            musteriBindingSource.DataSource = _model;
+            this.btnKaydet.Click += BtnKaydet_Click;
+        }
+
+        private void BtnKaydet_Click(object sender, EventArgs e)
+        {
+            
         }
 
         private void FrmMusteriTanim_Load(object sender, EventArgs e)
         {
-            comboBoxEdit4.Properties.DisplayMember = "Adi";
-            comboBoxEdit4.Properties.ValueMember = "Id";
-            comboBoxEdit4.Properties.DataSource = _BusinesUOW.IlRepository.GetAll().Select(x => new
+            AdresIlIdComboBoxEdit.EditValueChanged += IlAdiTextEdit_EditValueChanged;
+            AdresIlIdComboBoxEdit.Properties.DisplayMember = "Adi";
+            AdresIlIdComboBoxEdit.Properties.ValueMember = "Id";
+            AdresIlIdComboBoxEdit.Properties.DataSource = _BusinesUOW.IlRepository.GetAll().Select(x => new
+            {
+                Id = x.Id,
+                Adi = x.Adi
+            });
+            AdresIlceIlIdComboBoxEdit.Properties.DisplayMember = "Adi";
+            AdresIlceIlIdComboBoxEdit.Properties.ValueMember = "Id";
+            AdresIlceIlIdComboBoxEdit.Properties.DataSource = _BusinesUOW.IlceRepository.GetAll().Select(x => new
+            {
+                Id = x.Id,
+                Adi = x.Adi
+            });
+            AdresIlIdComboBoxEdit.EditValue = 1;
+            AdresIlceIlIdComboBoxEdit.EditValue = 1;
+        }
+
+        private void IlAdiTextEdit_EditValueChanged(object sender, EventArgs e)
+        {
+            int ilId = Convert.ToInt32(AdresIlIdComboBoxEdit.EditValue);
+            AdresIlceIlIdComboBoxEdit.Properties.DisplayMember= "Adi";
+            AdresIlceIlIdComboBoxEdit.Properties.ValueMember = "Id";
+            AdresIlceIlIdComboBoxEdit.Properties.DataSource = _BusinesUOW.IlceRepository.GetAll(x => x.IlId== ilId).Select(x => new
             {
                 x.Id,
                 x.Adi
             });
         }
 
-        private void comboBoxEdit5_EditValueChanged(object sender, EventArgs e)
+        private void btnKaydet_Click_1(object sender, EventArgs e)
         {
-
-        }
-
-        private void comboBoxEdit4_EditValueChanged(object sender, EventArgs e)
-        {
-            int IlId = Convert.ToInt32(comboBoxEdit4.EditValue);
-            comboBoxEdit5.Properties.DisplayMember = "Adi";
-            comboBoxEdit5.Properties.ValueMember = "Id";
-            comboBoxEdit5.Properties.DataSource = _BusinesUOW.IlceRepository.GetAll(x => x.IlId == IlId).Select(x => new
+            if (AdiTextEdit.Text == null || (AdiTextEdit.Text.Trim() == "") || SoyadiTextEdit.Text == null || (SoyadiTextEdit.Text.Trim() == "") || SoyadiTextEdit.Text == null || (SoyadiTextEdit.Text.Trim() == ""))
             {
-                x.Id,
-                x.Adi
-            });
+                var res = UIHelper.MesajKayitEdemez();
+            }
+            else
+            {
+                var res = UIHelper.KayitEkle();
+                if (res == DialogResult.Yes)
+                {
+                    _BusinesUOW.MusteriRepository.Add(_model);
+                    _context.SaveChanges();
+                    var r = UIHelper.MesajVer();
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
+                }
+            }
+            var saveResult = _BusinesUOW.Complete();
         }
     }
 }

@@ -51,7 +51,7 @@ namespace FoxSoftware.UI
 
         private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            urunpredicate urunpre = new urunpredicate();
+            FrmUrunPredicate urunpre = new FrmUrunPredicate();
             urunpre.MdiParent = this;
             if (Application.OpenForms["urunpredicate"] == null)  // Form açık mı?
             {
@@ -233,7 +233,16 @@ namespace FoxSoftware.UI
 
         private void barButtonItem23_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            
+            frmgrafikrapor grafikrapor = new frmgrafikrapor();
+            grafikrapor.MdiParent = this;
+            if (Application.OpenForms["frmgrafikrapor"] == null)  // Form açık mı?
+            {
+                grafikrapor.Show();
+            }
+            else
+            {
+                grafikrapor.Close();
+            }
         }
 
         private void barButtonItem10_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -244,6 +253,48 @@ namespace FoxSoftware.UI
         private void barButtonItem11_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
 
+        }
+
+        private void barButtonItem24_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            FrmStokPredicate frmstokpredicate = new FrmStokPredicate();
+            frmstokpredicate.MdiParent = this;
+            if (Application.OpenForms["frmstokpredicate"] == null)  // Form açık mı?
+            {
+                frmstokpredicate.Show();
+            }
+            else
+            {
+                frmstokpredicate.Close();
+            }
+        }
+
+        private void barButtonItem25_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmaylikmaliyet frmaylik = new frmaylikmaliyet();
+            frmaylik.MdiParent = this;
+            if (Application.OpenForms["frmaylikmaliyet"] == null)  // Form açık mı?
+            {
+                frmaylik.Show();
+            }
+            else
+            {
+                frmaylik.Close();
+            }
+        }
+
+        private void barButtonItem27_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmyillikmaliyet frmyillik = new frmyillikmaliyet();
+            frmyillik.MdiParent = this;
+            if (Application.OpenForms["frmyillikmaliyet"] == null)  // Form açık mı?
+            {
+                frmyillik.Show();
+            }
+            else
+            {
+                frmyillik.Close();
+            }
         }
     }
 }

@@ -44,6 +44,7 @@
     <Reference Include="DevExpress.DataAccess.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.DataAccess.v20.1.UI, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Diagram.v20.1.Core, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Images.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Office.v20.1.Core, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Pdf.v20.1.Core, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.PivotGrid.v20.1.Core, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -55,6 +56,7 @@
     <Reference Include="DevExpress.XtraBars.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraCharts.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraCharts.v20.1.Extensions, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v20.1.UI, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraCharts.v20.1.Wizard, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraDiagram.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -87,6 +89,7 @@
     <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
     <Reference Include="System.Security" />
     <Reference Include="System.Transactions" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -125,6 +128,24 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Raporlar\frmgrafikrapor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Raporlar\frmgrafikrapor.Designer.cs">
+      <DependentUpon>frmgrafikrapor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Raporlar\frmyillikmaliyet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Raporlar\frmyillikmaliyet.Designer.cs">
+      <DependentUpon>frmyillikmaliyet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Raporlar\frmaylikmaliyet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Raporlar\frmaylikmaliyet.Designer.cs">
+      <DependentUpon>frmaylikmaliyet.cs</DependentUpon>
+    </Compile>
     <Compile Include="Raporlar\frmmaliyet.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -154,6 +175,18 @@
     </Compile>
     <Compile Include="Raporlar\frmpopulersehir.Designer.cs">
       <DependentUpon>frmpopulersehir.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Raporlar\FrmStokPredicate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Raporlar\FrmStokPredicate.Designer.cs">
+      <DependentUpon>FrmStokPredicate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Raporlar\stokhrkpredicate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Raporlar\stokhrkpredicate.Designer.cs">
+      <DependentUpon>stokhrkpredicate.cs</DependentUpon>
     </Compile>
     <Compile Include="Raporlar\SplashScreen1.cs">
       <SubType>Form</SubType>
@@ -203,23 +236,38 @@
     <Compile Include="Raporlar\birimpredicate.Designer.cs">
       <DependentUpon>birimpredicate.cs</DependentUpon>
     </Compile>
-    <Compile Include="Raporlar\urunpredicate.cs">
+    <Compile Include="Raporlar\FrmUrunPredicate.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Raporlar\urunpredicate.Designer.cs">
-      <DependentUpon>urunpredicate.cs</DependentUpon>
+    <Compile Include="Raporlar\FrmUrunPredicate.Designer.cs">
+      <DependentUpon>FrmUrunPredicate.cs</DependentUpon>
     </Compile>
-    <Compile Include="Raporlar\stokhrkpredicate.cs">
-      <SubType>Form</SubType>
+    <Compile Include="Stok_TakipDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Stok_TakipDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Raporlar\stokhrkpredicate.Designer.cs">
-      <DependentUpon>stokhrkpredicate.cs</DependentUpon>
+    <Compile Include="Stok_TakipDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Stok_TakipDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Stok_TakipDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Stok_TakipDataSet2.xsd</DependentUpon>
     </Compile>
     <Compile Include="Tanimlamalar\FrmKokuTurTanim.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Tanimlamalar\FrmKokuTurTanim.Designer.cs">
       <DependentUpon>FrmKokuTurTanim.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tanimlamalar\FrmStokTanim.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tanimlamalar\FrmStokTanim.Designer.cs">
+      <DependentUpon>FrmStokTanim.cs</DependentUpon>
     </Compile>
     <Compile Include="Tanimlamalar\FrmUrunTurTanim.cs">
       <SubType>Form</SubType>
@@ -258,6 +306,7 @@
       <DependentUpon>FrmUrunTanim.cs</DependentUpon>
     </Compile>
     <Compile Include="UIHelper.cs" />
+    <Compile Include="UISqlHelper.cs" />
     <EmbeddedResource Include="Hareketler\FrmKargoTakip.resx">
       <DependentUpon>FrmKargoTakip.cs</DependentUpon>
     </EmbeddedResource>
@@ -284,6 +333,15 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Raporlar\frmgrafikrapor.resx">
+      <DependentUpon>frmgrafikrapor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\frmyillikmaliyet.resx">
+      <DependentUpon>frmyillikmaliyet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\frmaylikmaliyet.resx">
+      <DependentUpon>frmaylikmaliyet.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Raporlar\frmmaliyet.resx">
       <DependentUpon>frmmaliyet.cs</DependentUpon>
     </EmbeddedResource>
@@ -298,6 +356,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Raporlar\frmpopulersehir.resx">
       <DependentUpon>frmpopulersehir.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\FrmStokPredicate.resx">
+      <DependentUpon>FrmStokPredicate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\stokhrkpredicate.resx">
+      <DependentUpon>stokhrkpredicate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Raporlar\SplashScreen1.resx">
       <DependentUpon>SplashScreen1.cs</DependentUpon>
@@ -323,14 +387,14 @@
     <EmbeddedResource Include="Raporlar\birimpredicate.resx">
       <DependentUpon>birimpredicate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Raporlar\urunpredicate.resx">
-      <DependentUpon>urunpredicate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Raporlar\stokhrkpredicate.resx">
-      <DependentUpon>stokhrkpredicate.cs</DependentUpon>
+    <EmbeddedResource Include="Raporlar\FrmUrunPredicate.resx">
+      <DependentUpon>FrmUrunPredicate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tanimlamalar\FrmKokuTurTanim.resx">
       <DependentUpon>FrmKokuTurTanim.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tanimlamalar\FrmStokTanim.resx">
+      <DependentUpon>FrmStokTanim.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tanimlamalar\FrmUrunTurTanim.resx">
       <DependentUpon>FrmUrunTurTanim.cs</DependentUpon>
@@ -351,6 +415,17 @@
       <DependentUpon>FrmUrunTanim.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\FoxSoftware.Entites.Concreate.Birim.datasource" />
+    <None Include="Properties\DataSources\FoxSoftware.Entites.Concreate.Firma.datasource" />
+    <None Include="Properties\DataSources\FoxSoftware.Entites.Concreate.KokuTuru.datasource" />
+    <None Include="Properties\DataSources\FoxSoftware.Entites.Concreate.Marka.datasource" />
+    <None Include="Properties\DataSources\FoxSoftware.Entites.Concreate.Musteri.datasource" />
+    <None Include="Properties\DataSources\FoxSoftware.Entites.Concreate.SatHrkAna.datasource" />
+    <None Include="Properties\DataSources\FoxSoftware.Entites.Concreate.SatHrkDetay.datasource" />
+    <None Include="Properties\DataSources\FoxSoftware.Entites.Concreate.StokHrkAna.datasource" />
+    <None Include="Properties\DataSources\FoxSoftware.Entites.Concreate.StokHrkDetay.datasource" />
+    <None Include="Properties\DataSources\FoxSoftware.Entites.Concreate.Urun.datasource" />
+    <None Include="Properties\DataSources\FoxSoftware.Entites.Concreate.UrunTur.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -360,6 +435,39 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Stok_TakipDataSet.xsc">
+      <DependentUpon>Stok_TakipDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Stok_TakipDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Stok_TakipDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Stok_TakipDataSet.xss">
+      <DependentUpon>Stok_TakipDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Stok_TakipDataSet1.xsc">
+      <DependentUpon>Stok_TakipDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="Stok_TakipDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Stok_TakipDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Stok_TakipDataSet1.xss">
+      <DependentUpon>Stok_TakipDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="Stok_TakipDataSet2.xsc">
+      <DependentUpon>Stok_TakipDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="Stok_TakipDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Stok_TakipDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Stok_TakipDataSet2.xss">
+      <DependentUpon>Stok_TakipDataSet2.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -387,6 +495,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\pngegg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

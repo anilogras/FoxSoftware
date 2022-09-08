@@ -1,8 +1,10 @@
 ﻿using DevExpress.Utils.Menu;
+using DevExpress.XtraGrid.Views.Grid;
 using FoxSoftware.Business.Services;
 using FoxSoftware.DataAccess;
 using FoxSoftware.DataAccess.Repositories;
 using FoxSoftware.Entites.Concreate;
+using FoxSoftware.Ortak.Base;
 using FoxSoftware.UI.Hareketler;
 using FoxSoftware.UI.Tanimlamalar;
 using System;
@@ -23,29 +25,48 @@ namespace FoxSoftware.UI.Raporlar
         public birimpredicate()
         {
             InitializeComponent();
-            gridView1.PopupMenuShowing += GridView1_PopupMenuShowing;
             _BusinesUOW = new FoxSoftWareBusinessUOW(DataAccessHelper.NewContext);
+            gridView1.PopupMenuShowing += GridView1_PopupMenuShowing;
         }
 
         private void GridView1_PopupMenuShowing(object sender, DevExpress.XtraGrid.Views.Grid.PopupMenuShowingEventArgs e)
         {
-            //DXMenuItem menuItemDeleteRow = new DXMenuItem(deleteRowsCommandCaption, new EventHandler(OnDeleteRowClick), imageCollection1.Images[0]);
-            DXMenuItem dXMenuItemGuncelle = new DXMenuItem();
-            dXMenuItemGuncelle.Click += DXMenuItemGuncelle_Click;
-            dXMenuItemGuncelle.Caption = "Güncelle";
-            e.Menu.Items.Add(dXMenuItemGuncelle);
-            DXMenuItem dXMenuItemSil = new DXMenuItem();
-            dXMenuItemSil.Click += DXMenuItemSil_Click;
-            dXMenuItemSil.Caption = "Sil";
-            //dXMenuItemSil.ImageOptions.Image = 
-            e.Menu.Items.Add(dXMenuItemSil);
+            if (e.HitInfo.InRow && e.HitInfo.InRowCell)
+            {
+                DXMenuItem dXMenuItemGuncelle = new DXMenuItem();
+                dXMenuItemGuncelle.Click += DXMenuItemGuncelle_Click;
+                dXMenuItemGuncelle.Caption = "Güncelle";
+                e.Menu.Items.Add(dXMenuItemGuncelle);
+
+                DXMenuItem dXMenuItemSil = new DXMenuItem();
+                dXMenuItemSil.Click += DXMenuItemSil_Click;
+                dXMenuItemSil.Caption = "Sil";
+                e.Menu.Items.Add(dXMenuItemSil);
+            }
         }
 
         private void DXMenuItemGuncelle_Click(object sender, EventArgs e)
         {
-
+            FormModelGuncelle();
         }
+        public void FormModelGuncelle()
+        {
+            Birim birim = gridView1.GetRow(gridView1.FocusedRowHandle) as Birim;
 
+            ViewFormModel<Birim> viewModel = new ViewFormModel<Birim>();
+            FoxSoftWareBusinessUOW guncelleUOW = new FoxSoftWareBusinessUOW();
+            viewModel.Model = guncelleUOW.BirimRepository.Get(x => x.Id == birim.Id);
+            viewModel.Context = guncelleUOW.GetContext();
+
+
+            FrmBirimTanim btanim = new FrmBirimTanim(viewModel);
+
+            DialogResult result = btanim.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                Yenile();
+            }
+        }
         private void DXMenuItemSil_Click(object sender, EventArgs e)
         {
             var res = UIHelper.KayitSil();
@@ -57,7 +78,7 @@ namespace FoxSoftware.UI.Raporlar
 
                 _BusinesUOW.Complete();
                 var r = UIHelper.MesajVer();
-                yenile();
+                Yenile();
             }
             else
             {
@@ -65,30 +86,34 @@ namespace FoxSoftware.UI.Raporlar
             }
         }
 
-        public void yenile()
+        public void Yenile()
         {
-            gridControl1.DataSource = _BusinesUOW.BirimRepository.GetAll().Where(x => x.Silinmis == false).Select(x => new Birim
-            {
-                Id = x.Id,
-                Adi = x.Adi
-            });
+            gridView1.OptionsBehavior.Editable = false;
+            _BusinesUOW = new FoxSoftWareBusinessUOW(DataAccessHelper.NewContext);
+            gridControl1.DataSource = _BusinesUOW.BirimRepository.GetAll();
         }
         private void birimpredicate_Load(object sender, EventArgs e)
         {
             gridView1.OptionsBehavior.Editable = false;
             gridView1.OptionsView.ColumnAutoWidth = false;
-            yenile();
+            gridView1.OptionsView.ShowAutoFilterRow = true;
+            Yenile();
         }
-
-        private void simpleButton1_Click(object sender, EventArgs e)
+        private void simpleButton1_Click_1(object sender, EventArgs e)
         {
-
-            FrmBirimTanim btanim = new FrmBirimTanim();
-            DialogResult result = btanim.ShowDialog();
+            ViewFormModel<Birim> model = new ViewFormModel<Birim>();
+            model.Context = _BusinesUOW.GetContext();
+            FrmBirimTanim btanim2 = new FrmBirimTanim(model);
+            DialogResult result = btanim2.ShowDialog();
             if (result == DialogResult.OK)
             {
-                yenile();
+                Yenile();
             }
+        }
+
+        private void gridView1_DoubleClick_1(object sender, EventArgs e)
+        {
+            FormModelGuncelle();
         }
     }
 }

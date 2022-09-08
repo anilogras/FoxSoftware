@@ -31,7 +31,6 @@ namespace FoxSoftware.DataAccess.Repositories
             StokHrkDetayRepository = new StokHrkDetayRepository(context);
             TelefonNoRepository = new TelefonNoRepository(context);
             UrunRepository = new UrunRepository(context);
-            UrunTipRepository = new UrunTipRepository(context);
             UrunTurRepository = new UrunTurRepository(context);
         }
 
@@ -51,7 +50,6 @@ namespace FoxSoftware.DataAccess.Repositories
         public StokHrkDetayRepository StokHrkDetayRepository { get; set; }
         public TelefonNoRepository TelefonNoRepository { get; set; }
         public UrunRepository UrunRepository { get; set; }
-        public UrunTipRepository UrunTipRepository { get; set; }
         public UrunTurRepository UrunTurRepository { get; set; }
 
 
