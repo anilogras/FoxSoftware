@@ -23,225 +23,254 @@ namespace FoxSoftware.UI
         sathrkpredicate sathrkpredicate;
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            sathrkpredicate = new sathrkpredicate();
-            sathrkpredicate.MdiParent = this;
+
             if (Application.OpenForms["sathrkpredicate"] == null)  // Form açık mı?
             {
+                sathrkpredicate = new sathrkpredicate();
+                sathrkpredicate.MdiParent = this;
                 sathrkpredicate.Show();
             }
             else
             {
-                sathrkpredicate.Close();
+                var activeList = this.MdiChildren.Where(x => x.Name == "sathrkpredicate").FirstOrDefault();
+                this.ActiveControl = activeList;
             }
         }
 
         private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+
+            if (Application.OpenForms["FrmStokPredicate"] == null)  // Form açık mı?
+            {
                 shrkpredicate = new stokhrkpredicate();
                 shrkpredicate.MdiParent = this;
-            if (Application.OpenForms["stokhrkpredicate"] == null)  // Form açık mı?
-            {
                 shrkpredicate.Show();
             }
             else
             {
-                shrkpredicate.Close();
+                var activeList = this.MdiChildren.Where(x => x.Name == "FrmStokPredicate").FirstOrDefault();
+                this.ActiveControl = activeList;
             }
         }
 
         private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            FrmUrunPredicate urunpre = new FrmUrunPredicate();
-            urunpre.MdiParent = this;
-            if (Application.OpenForms["urunpredicate"] == null)  // Form açık mı?
+            if (Application.OpenForms["FrmUrunPredicate"] == null)  // Form açık mı?
             {
+                FrmUrunPredicate urunpre = new FrmUrunPredicate();
+                urunpre.MdiParent = this;
                 urunpre.Show();
             }
             else
             {
-                urunpre.Close();
+                var activeList = this.MdiChildren.Where(x => x.Name == "FrmUrunPredicate").FirstOrDefault();
+                this.ActiveControl = activeList;
             }
-            
         }
 
         private void barButtonItem22_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            FrmKargoTakip frmkargo = new FrmKargoTakip();
-            frmkargo.MdiParent = this;
+
             if (Application.OpenForms["FrmKargoTakip"] == null)  // Form açık mı?
             {
+                FrmKargoTakip frmkargo = new FrmKargoTakip();
+                frmkargo.MdiParent = this;
                 frmkargo.Show();
             }
             else
             {
-                frmkargo.Close();
+                var activeList = this.MdiChildren.Where(x => x.Name == "FrmKargoTakip").FirstOrDefault();
+                this.ActiveControl = activeList;
             }
         }
 
         private void barButtonItem7_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            musteripredicate musteripre = new musteripredicate();
-            musteripre.MdiParent = this;
+
             if (Application.OpenForms["musteripredicate"] == null)  // Form açık mı?
             {
+                musteripredicate musteripre = new musteripredicate();
+                musteripre.MdiParent = this;
                 musteripre.Show();
             }
             else
             {
-                musteripre.Close();
+                var activeList = this.MdiChildren.Where(x => x.Name == "musteripredicate").FirstOrDefault();
+                this.ActiveControl = activeList;
             }
         }
 
         private void barButtonItem4_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            firmapredicate firmapre = new firmapredicate();
-            firmapre.MdiParent = this;
+
             if (Application.OpenForms["firmapredicate"] == null)  // Form açık mı?
             {
+                firmapredicate firmapre = new firmapredicate();
+                firmapre.MdiParent = this;
                 firmapre.Show();
             }
             else
             {
-                firmapre.Close();
+                var activeList = this.MdiChildren.Where(x => x.Name == "firmapredicate").FirstOrDefault();
+                this.ActiveControl = activeList;
             }
         }
 
         private void barButtonItem5_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            birimpredicate birimpre = new birimpredicate();
-            birimpre.MdiParent = this;
+
             if (Application.OpenForms["birimpredicate"] == null)  // Form açık mı?
             {
+                birimpredicate birimpre = new birimpredicate();
+                birimpre.MdiParent = this;
                 birimpre.Show();
             }
             else
             {
-                birimpre.Close();
+                var activeList = this.MdiChildren.Where(x => x.Name == "birimpredicate").FirstOrDefault();
+                this.ActiveControl = activeList;
             }
         }
 
         private void barButtonItem6_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            markapredicate markapre = new markapredicate();
-            markapre.MdiParent = this;
+
             if (Application.OpenForms["markapredicate"] == null)  // Form açık mı?
             {
+                markapredicate markapre = new markapredicate();
+                markapre.MdiParent = this;
                 markapre.Show();
             }
             else
             {
-                markapre.Close();
+                var activeList = this.MdiChildren.Where(x => x.Name == "markapredicate").FirstOrDefault();
+                this.ActiveControl = activeList;
             }
         }
 
         private void barButtonItem8_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            kokuturpredicate kokuturpre = new kokuturpredicate();
-            kokuturpre.MdiParent = this;
+
             if (Application.OpenForms["kokuturpredicate"] == null)  // Form açık mı?
             {
+                kokuturpredicate kokuturpre = new kokuturpredicate();
+                kokuturpre.MdiParent = this;
                 kokuturpre.Show();
             }
             else
             {
-                kokuturpre.Close();
+                var activeList = this.MdiChildren.Where(x => x.Name == "kokuturpredicate").FirstOrDefault();
+                this.ActiveControl = activeList;
             }
         }
 
         private void barButtonItem9_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            urunturpredicate urunturpre = new urunturpredicate();
-            urunturpre.MdiParent = this;
+
             if (Application.OpenForms["urunturpredicate"] == null)  // Form açık mı?
             {
+                urunturpredicate urunturpre = new urunturpredicate();
+                urunturpre.MdiParent = this;
                 urunturpre.Show();
             }
             else
             {
-                urunturpre.Close();
+                var activeList = this.MdiChildren.Where(x => x.Name == "urunturpredicate").FirstOrDefault();
+                this.ActiveControl = activeList;
             }
         }
         private void barButtonItem15_ItemClick_1(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            frmgirilensiparis girilensip = new frmgirilensiparis();
-            girilensip.MdiParent = this;
+
             if (Application.OpenForms["frmgirilensiparis"] == null)  // Form açık mı?
             {
+                frmgirilensiparis girilensip = new frmgirilensiparis();
+                girilensip.MdiParent = this;
                 girilensip.Show();
             }
             else
             {
-                girilensip.Close();
+                var activeList = this.MdiChildren.Where(x => x.Name == "frmgirilensiparis").FirstOrDefault();
+                this.ActiveControl = activeList;
             }
         }
 
         private void barButtonItem16_ItemClick_1(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            frmstokalim stokalim = new frmstokalim();
-            stokalim.MdiParent = this;
+
             if (Application.OpenForms["frmstokalim"] == null)  // Form açık mı?
             {
+                frmstokalim stokalim = new frmstokalim();
+                stokalim.MdiParent = this;
                 stokalim.Show();
             }
             else
             {
-                stokalim.Close();
+                var activeList = this.MdiChildren.Where(x => x.Name == "frmstokalim").FirstOrDefault();
+                this.ActiveControl = activeList;
             }
         }
 
         private void barButtonItem17_ItemClick_1(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            frmmaliyet maliyet = new frmmaliyet();
-            maliyet.MdiParent = this;
+
             if (Application.OpenForms["frmmaliyet"] == null)  // Form açık mı?
             {
+                frmmaliyet maliyet = new frmmaliyet();
+                maliyet.MdiParent = this;
                 maliyet.Show();
             }
             else
             {
-                maliyet.Close();
+                var activeList = this.MdiChildren.Where(x => x.Name == "frmmaliyet").FirstOrDefault();
+                this.ActiveControl = activeList;
             }
         }
 
         private void barButtonItem13_ItemClick_1(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            frmpopulersehir popsehir = new frmpopulersehir();
-            popsehir.MdiParent = this;
+
             if (Application.OpenForms["frmpopulersehir"] == null)  // Form açık mı?
             {
+                frmpopulersehir popsehir = new frmpopulersehir();
+                popsehir.MdiParent = this;
                 popsehir.Show();
             }
             else
             {
-                popsehir.Close();
+                var activeList = this.MdiChildren.Where(x => x.Name == "frmpopulersehir").FirstOrDefault();
+                this.ActiveControl = activeList;
             }
         }
 
         private void barButtonItem14_ItemClick_1(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            frmpopulerurun popurun = new frmpopulerurun();
-            popurun.MdiParent = this;
+
             if (Application.OpenForms["frmpopulerurun"] == null)  // Form açık mı?
             {
+                frmpopulerurun popurun = new frmpopulerurun();
+                popurun.MdiParent = this;
                 popurun.Show();
             }
             else
             {
-                popurun.Close();
+                var activeList = this.MdiChildren.Where(x => x.Name == "frmpopulerurun").FirstOrDefault();
+                this.ActiveControl = activeList;
             }
         }
-
         private void barButtonItem23_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            frmgrafikrapor grafikrapor = new frmgrafikrapor();
-            grafikrapor.MdiParent = this;
             if (Application.OpenForms["frmgrafikrapor"] == null)  // Form açık mı?
             {
+                frmgrafikrapor grafikrapor = new frmgrafikrapor();
+                grafikrapor.MdiParent = this;
                 grafikrapor.Show();
+                
             }
             else
             {
-                grafikrapor.Close();
+                var activeList = this.MdiChildren.Where(x => x.Name == "frmgrafikrapor").FirstOrDefault();
+                this.ActiveControl = activeList;
             }
         }
 
@@ -257,43 +286,69 @@ namespace FoxSoftware.UI
 
         private void barButtonItem24_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            FrmStokPredicate frmstokpredicate = new FrmStokPredicate();
-            frmstokpredicate.MdiParent = this;
+
             if (Application.OpenForms["frmstokpredicate"] == null)  // Form açık mı?
             {
+                FrmStokPredicate frmstokpredicate = new FrmStokPredicate();
+                frmstokpredicate.MdiParent = this;
                 frmstokpredicate.Show();
             }
             else
             {
-                frmstokpredicate.Close();
+                var activeList = this.MdiChildren.Where(x => x.Name == "frmstokpredicate").FirstOrDefault();
+                this.ActiveControl = activeList;
             }
         }
 
         private void barButtonItem25_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            frmaylikmaliyet frmaylik = new frmaylikmaliyet();
-            frmaylik.MdiParent = this;
+
             if (Application.OpenForms["frmaylikmaliyet"] == null)  // Form açık mı?
             {
+                frmaylikmaliyet frmaylik = new frmaylikmaliyet();
+                frmaylik.MdiParent = this;
                 frmaylik.Show();
             }
             else
             {
-                frmaylik.Close();
+                var activeList = this.MdiChildren.Where(x => x.Name == "frmaylikmaliyet").FirstOrDefault();
+                this.ActiveControl = activeList;
             }
         }
 
         private void barButtonItem27_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            frmyillikmaliyet frmyillik = new frmyillikmaliyet();
-            frmyillik.MdiParent = this;
+
             if (Application.OpenForms["frmyillikmaliyet"] == null)  // Form açık mı?
             {
+                frmyillikmaliyet frmyillik = new frmyillikmaliyet();
+                frmyillik.MdiParent = this;
                 frmyillik.Show();
             }
             else
             {
-                frmyillik.Close();
+                var activeList = this.MdiChildren.Where(x => x.Name == "frmyillikmaliyet").FirstOrDefault();
+                this.ActiveControl = activeList;
+            }
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            barButtonItem23.PerformClick();
+        }
+
+        private void barButtonItem28_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (Application.OpenForms["FrmFiyatGuncelle"] == null)  // Form açık mı?
+            {
+                FrmFiyatGuncelle frmupdate = new FrmFiyatGuncelle();
+                frmupdate.MdiParent = this;
+                frmupdate.Show();
+            }
+            else
+            {
+                var activeList = this.MdiChildren.Where(x => x.Name == "FrmFiyatGuncelle").FirstOrDefault();
+                this.ActiveControl = activeList;
             }
         }
     }
