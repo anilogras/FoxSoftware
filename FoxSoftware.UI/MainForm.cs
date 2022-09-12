@@ -335,6 +335,7 @@ namespace FoxSoftware.UI
         private void MainForm_Load(object sender, EventArgs e)
         {
             barButtonItem23.PerformClick();
+            barButtonItem29.PerformClick();
         }
 
         private void barButtonItem28_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -348,6 +349,21 @@ namespace FoxSoftware.UI
             else
             {
                 var activeList = this.MdiChildren.Where(x => x.Name == "FrmFiyatGuncelle").FirstOrDefault();
+                this.ActiveControl = activeList;
+            }
+        }
+
+        private void barButtonItem29_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (Application.OpenForms["frmgrafikraporkozmetik"] == null)  // Form açık mı?
+            {
+                frmgrafikraporkozmetik frmupdate = new frmgrafikraporkozmetik();
+                frmupdate.MdiParent = this;
+                frmupdate.Show();
+            }
+            else
+            {
+                var activeList = this.MdiChildren.Where(x => x.Name == "frmgrafikraporkozmetik").FirstOrDefault();
                 this.ActiveControl = activeList;
             }
         }

@@ -32,9 +32,7 @@ namespace FoxSoftware.UI.Tanimlamalar
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmUrunTanim));
             this.dataLayoutControl1 = new DevExpress.XtraDataLayout.DataLayoutControl();
-            this.btnKaydet = new DevExpress.XtraEditors.SimpleButton();
             this.lookupKokuTur = new DevExpress.XtraEditors.LookUpEdit();
-            this.urunBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lookupUrunTur = new DevExpress.XtraEditors.LookUpEdit();
             this.lookupBirim = new DevExpress.XtraEditors.LookUpEdit();
             this.lookupMarka = new DevExpress.XtraEditors.LookUpEdit();
@@ -44,8 +42,11 @@ namespace FoxSoftware.UI.Tanimlamalar
             this.textUrunKodu = new DevExpress.XtraEditors.TextEdit();
             this.comboBoxEdit7 = new DevExpress.XtraEditors.ComboBoxEdit();
             this.CbCinsiyet = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.CbSatisTipi = new DevExpress.XtraEditors.ComboBoxEdit();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.btnKaydet = new DevExpress.XtraEditors.SimpleButton();
+            this.urunBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -59,11 +60,9 @@ namespace FoxSoftware.UI.Tanimlamalar
             this.ItemForSatisTipi = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.birimLayoutControl = new DevExpress.XtraLayout.LayoutControlItem();
-            this.CbSatisTipi = new DevExpress.XtraEditors.ComboBoxEdit();
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).BeginInit();
             this.dataLayoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lookupKokuTur.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.urunBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookupUrunTur.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookupBirim.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookupMarka.Properties)).BeginInit();
@@ -73,8 +72,10 @@ namespace FoxSoftware.UI.Tanimlamalar
             ((System.ComponentModel.ISupportInitialize)(this.textUrunKodu.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit7.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CbCinsiyet.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CbSatisTipi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.urunBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
@@ -88,7 +89,6 @@ namespace FoxSoftware.UI.Tanimlamalar
             ((System.ComponentModel.ISupportInitialize)(this.ItemForSatisTipi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.birimLayoutControl)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CbSatisTipi.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // dataLayoutControl1
@@ -116,18 +116,6 @@ namespace FoxSoftware.UI.Tanimlamalar
             this.dataLayoutControl1.TabIndex = 0;
             this.dataLayoutControl1.Text = "dataLayoutControl1";
             // 
-            // btnKaydet
-            // 
-            this.btnKaydet.Appearance.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F);
-            this.btnKaydet.Appearance.Options.UseFont = true;
-            this.btnKaydet.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnKaydet.ImageOptions.Image")));
-            this.btnKaydet.Location = new System.Drawing.Point(24, 350);
-            this.btnKaydet.Name = "btnKaydet";
-            this.btnKaydet.Size = new System.Drawing.Size(327, 36);
-            this.btnKaydet.StyleController = this.dataLayoutControl1;
-            this.btnKaydet.TabIndex = 17;
-            this.btnKaydet.Text = "Kaydet";
-            // 
             // lookupKokuTur
             // 
             this.lookupKokuTur.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.urunBindingSource, "KokuTuruId", true));
@@ -140,10 +128,6 @@ namespace FoxSoftware.UI.Tanimlamalar
             this.lookupKokuTur.Size = new System.Drawing.Size(264, 20);
             this.lookupKokuTur.StyleController = this.dataLayoutControl1;
             this.lookupKokuTur.TabIndex = 13;
-            // 
-            // urunBindingSource
-            // 
-            this.urunBindingSource.DataSource = typeof(FoxSoftware.Entites.Concreate.Urun);
             // 
             // lookupUrunTur
             // 
@@ -245,6 +229,19 @@ namespace FoxSoftware.UI.Tanimlamalar
             this.CbCinsiyet.StyleController = this.dataLayoutControl1;
             this.CbCinsiyet.TabIndex = 9;
             // 
+            // CbSatisTipi
+            // 
+            this.CbSatisTipi.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.urunBindingSource, "SatisTipi", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.CbSatisTipi.Location = new System.Drawing.Point(87, 58);
+            this.CbSatisTipi.Name = "CbSatisTipi";
+            this.CbSatisTipi.Properties.Appearance.Options.UseTextOptions = true;
+            this.CbSatisTipi.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.CbSatisTipi.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.CbSatisTipi.Size = new System.Drawing.Size(264, 20);
+            this.CbSatisTipi.StyleController = this.dataLayoutControl1;
+            this.CbSatisTipi.TabIndex = 19;
+            // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.comboBoxEdit7;
@@ -263,6 +260,22 @@ namespace FoxSoftware.UI.Tanimlamalar
             this.Root.Name = "Root";
             this.Root.Size = new System.Drawing.Size(375, 410);
             this.Root.TextVisible = false;
+            // 
+            // btnKaydet
+            // 
+            this.btnKaydet.Appearance.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F);
+            this.btnKaydet.Appearance.Options.UseFont = true;
+            this.btnKaydet.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnKaydet.ImageOptions.Image")));
+            this.btnKaydet.Location = new System.Drawing.Point(24, 350);
+            this.btnKaydet.Name = "btnKaydet";
+            this.btnKaydet.Size = new System.Drawing.Size(327, 36);
+            this.btnKaydet.StyleController = this.dataLayoutControl1;
+            this.btnKaydet.TabIndex = 17;
+            this.btnKaydet.Text = "Kaydet";
+            // 
+            // urunBindingSource
+            // 
+            this.urunBindingSource.DataSource = typeof(FoxSoftware.Entites.Concreate.Urun);
             // 
             // layoutControlGroup1
             // 
@@ -414,19 +427,6 @@ namespace FoxSoftware.UI.Tanimlamalar
             this.birimLayoutControl.Text = "Birim";
             this.birimLayoutControl.TextSize = new System.Drawing.Size(60, 13);
             // 
-            // CbSatisTipi
-            // 
-            this.CbSatisTipi.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.urunBindingSource, "SatisTipi", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.CbSatisTipi.Location = new System.Drawing.Point(87, 58);
-            this.CbSatisTipi.Name = "CbSatisTipi";
-            this.CbSatisTipi.Properties.Appearance.Options.UseTextOptions = true;
-            this.CbSatisTipi.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
-            this.CbSatisTipi.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.CbSatisTipi.Size = new System.Drawing.Size(264, 20);
-            this.CbSatisTipi.StyleController = this.dataLayoutControl1;
-            this.CbSatisTipi.TabIndex = 19;
-            // 
             // FrmUrunTanim
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -440,7 +440,6 @@ namespace FoxSoftware.UI.Tanimlamalar
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).EndInit();
             this.dataLayoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.lookupKokuTur.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.urunBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookupUrunTur.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookupBirim.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookupMarka.Properties)).EndInit();
@@ -450,8 +449,10 @@ namespace FoxSoftware.UI.Tanimlamalar
             ((System.ComponentModel.ISupportInitialize)(this.textUrunKodu.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit7.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CbCinsiyet.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CbSatisTipi.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.urunBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
@@ -465,7 +466,6 @@ namespace FoxSoftware.UI.Tanimlamalar
             ((System.ComponentModel.ISupportInitialize)(this.ItemForSatisTipi)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.birimLayoutControl)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CbSatisTipi.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
