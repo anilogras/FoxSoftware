@@ -31,7 +31,7 @@ namespace FoxSoftware.DataAccess
             {
                 dbConfig = sat1;
             }
-            return @"Data Source="+dbConfig+";Initial Catalog=Stok_Takip;Integrated Security =true;";
+            return @"Data Source="+dbConfig+";Initial Catalog=Stok_Takip_Yeni;Integrated Security =true;";
         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

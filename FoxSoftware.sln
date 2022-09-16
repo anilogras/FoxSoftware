@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoxSoftware.Ortak", "FoxSof
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoxSoftware.UI", "FoxSoftware.UI\FoxSoftware.UI.csproj", "{BF7AEF5B-D86B-4FA2-8658-9D6FFCF84168}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SetupProject", "SetupProject\SetupProject.vdproj", "{0FEE98C4-6BC7-4613-88BA-990E44C88E28}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,8 @@ Global
 		{BF7AEF5B-D86B-4FA2-8658-9D6FFCF84168}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BF7AEF5B-D86B-4FA2-8658-9D6FFCF84168}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BF7AEF5B-D86B-4FA2-8658-9D6FFCF84168}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0FEE98C4-6BC7-4613-88BA-990E44C88E28}.Debug|Any CPU.ActiveCfg = Debug
+		{0FEE98C4-6BC7-4613-88BA-990E44C88E28}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

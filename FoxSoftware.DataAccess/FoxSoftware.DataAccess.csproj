@@ -109,6 +109,10 @@
     <Compile Include="Migrations\202209020731325_son migrationum.designer.cs">
       <DependentUpon>202209020731325_son migrationum.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202209121606535_transfer form sonrasi.cs" />
+    <Compile Include="Migrations\202209121606535_transfer form sonrasi.designer.cs">
+      <DependentUpon>202209121606535_transfer form sonrasi.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\AdresBilgisiRepository.cs" />
@@ -186,6 +190,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202209020731325_son migrationum.resx">
       <DependentUpon>202209020731325_son migrationum.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202209121606535_transfer form sonrasi.resx">
+      <DependentUpon>202209121606535_transfer form sonrasi.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

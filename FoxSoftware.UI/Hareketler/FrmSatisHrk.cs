@@ -169,7 +169,7 @@ namespace FoxSoftware.UI.Hareketler
         {
             lkpMusteri.Properties.DisplayMember = "MusteriAdSoyad";
             lkpMusteri.Properties.ValueMember = "Id";
-            lkpMusteri.Properties.DataSource = _BusinesUOW.MusteriRepository.GetAll().Select(x => new { x.Id, x.MusteriAdSoyad, x.TCKN, SehirAdi = x.Adres.Il.Adi, IlceAdi = x.Adres.Ilce.Adi, Telefon = x.TelefonNo.No, Adres = x.Adres.Adres });
+            lkpMusteri.Properties.DataSource = _BusinesUOW.MusteriRepository.GetAll().Select(x => new { x.Id, x.MusteriAdSoyad, x.TCKN , Telefon = x.TelefonNo.No});
             KolonGizle(lkpMusteri);
 
             if (checkEdit1.Checked == true)

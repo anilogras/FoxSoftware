@@ -66,6 +66,10 @@ namespace FoxSoftware.UI
             this.barButtonItem25 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem27 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem28 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem29 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem30 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem31 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnTransferForm = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -79,7 +83,6 @@ namespace FoxSoftware.UI
             this.skinDropDownButtonItem1 = new DevExpress.XtraBars.SkinDropDownButtonItem();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.barButtonItem26 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem29 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemColorPickEdit2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
@@ -134,9 +137,12 @@ namespace FoxSoftware.UI
             this.barButtonItem25,
             this.barButtonItem27,
             this.barButtonItem28,
-            this.barButtonItem29});
+            this.barButtonItem29,
+            this.barButtonItem30,
+            this.barButtonItem31,
+            this.btnTransferForm});
             resources.ApplyResources(this.ribbonControl1, "ribbonControl1");
-            this.ribbonControl1.MaxItemId = 276;
+            this.ribbonControl1.MaxItemId = 279;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.PageHeaderItemLinks.Add(this.skinDropDownButtonItem3);
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -419,6 +425,36 @@ namespace FoxSoftware.UI
             this.barButtonItem28.Name = "barButtonItem28";
             this.barButtonItem28.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem28_ItemClick);
             // 
+            // barButtonItem29
+            // 
+            resources.ApplyResources(this.barButtonItem29, "barButtonItem29");
+            this.barButtonItem29.Id = 275;
+            this.barButtonItem29.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem29.ImageOptions.Image")));
+            this.barButtonItem29.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem29.ImageOptions.LargeImage")));
+            this.barButtonItem29.Name = "barButtonItem29";
+            this.barButtonItem29.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem29_ItemClick);
+            // 
+            // barButtonItem30
+            // 
+            resources.ApplyResources(this.barButtonItem30, "barButtonItem30");
+            this.barButtonItem30.Id = 276;
+            this.barButtonItem30.Name = "barButtonItem30";
+            // 
+            // barButtonItem31
+            // 
+            resources.ApplyResources(this.barButtonItem31, "barButtonItem31");
+            this.barButtonItem31.Id = 277;
+            this.barButtonItem31.Name = "barButtonItem31";
+            // 
+            // btnTransferForm
+            // 
+            resources.ApplyResources(this.btnTransferForm, "btnTransferForm");
+            this.btnTransferForm.Id = 278;
+            this.btnTransferForm.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnTransferForm.ImageOptions.Image")));
+            this.btnTransferForm.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnTransferForm.ImageOptions.LargeImage")));
+            this.btnTransferForm.Name = "btnTransferForm";
+            this.btnTransferForm.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnTransferForm_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -432,6 +468,7 @@ namespace FoxSoftware.UI
             this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem2);
             this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem22);
             this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem28);
+            this.ribbonPageGroup1.ItemLinks.Add(this.btnTransferForm);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             resources.ApplyResources(this.ribbonPageGroup1, "ribbonPageGroup1");
             // 
@@ -512,15 +549,6 @@ namespace FoxSoftware.UI
             this.barButtonItem26.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem26.ImageOptions.LargeImage")));
             this.barButtonItem26.Name = "barButtonItem26";
             // 
-            // barButtonItem29
-            // 
-            resources.ApplyResources(this.barButtonItem29, "barButtonItem29");
-            this.barButtonItem29.Id = 275;
-            this.barButtonItem29.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem29.ImageOptions.Image")));
-            this.barButtonItem29.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem29.ImageOptions.LargeImage")));
-            this.barButtonItem29.Name = "barButtonItem29";
-            this.barButtonItem29.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem29_ItemClick);
-            // 
             // MainForm
             // 
             resources.ApplyResources(this, "$this");
@@ -591,5 +619,8 @@ namespace FoxSoftware.UI
         private DevExpress.XtraBars.BarButtonItem barButtonItem26;
         private DevExpress.XtraBars.BarButtonItem barButtonItem28;
         private DevExpress.XtraBars.BarButtonItem barButtonItem29;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem30;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem31;
+        private DevExpress.XtraBars.BarButtonItem btnTransferForm;
     }
 }

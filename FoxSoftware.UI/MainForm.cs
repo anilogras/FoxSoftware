@@ -1,4 +1,5 @@
-﻿using FoxSoftware.UI.Hareketler;
+﻿using DevExpress.XtraBars.Ribbon;
+using FoxSoftware.UI.Hareketler;
 using FoxSoftware.UI.Raporlar;
 using System;
 using System.Collections.Generic;
@@ -18,6 +19,7 @@ namespace FoxSoftware.UI
         {
             InitializeComponent();
         }
+
         FrmSatisHrk frmsatis;
         stokhrkpredicate shrkpredicate;
         sathrkpredicate sathrkpredicate;
@@ -366,6 +368,12 @@ namespace FoxSoftware.UI
                 var activeList = this.MdiChildren.Where(x => x.Name == "frmgrafikraporkozmetik").FirstOrDefault();
                 this.ActiveControl = activeList;
             }
+        }
+
+        private void btnTransferForm_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+                TransferForm trform = new TransferForm();
+                trform.Show();
         }
     }
 }

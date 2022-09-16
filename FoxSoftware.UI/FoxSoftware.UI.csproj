@@ -126,6 +126,12 @@
     <Compile Include="Hareketler\FrmSatisHrk.Designer.cs">
       <DependentUpon>FrmSatisHrk.cs</DependentUpon>
     </Compile>
+    <Compile Include="Hareketler\TransferForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Hareketler\TransferForm.Designer.cs">
+      <DependentUpon>TransferForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -330,6 +336,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Hareketler\FrmSatisHrk.resx">
       <DependentUpon>FrmSatisHrk.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hareketler\TransferForm.resx">
+      <DependentUpon>TransferForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
