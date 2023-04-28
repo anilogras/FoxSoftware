@@ -56,10 +56,10 @@ namespace FoxSoftware.UI.Raporlar
             PieChartLoad(sqlUrunTur, chartUrunTur);
             PieChartLoad(sqlKokutur, chartKokuTur);
             PieChartLoad(sqlSehir, chartSehir);
-            CiroMaliyetKarChart(sqlBuAy,chartBuAy);
-            CiroMaliyetKarChart(sqlAltiAy,charAltiAy);
-            CiroMaliyetKarChart(sqlBuYil, chartBuYil);
-            CiroMaliyetKarSutun(sqlBuHafta, chartHafta);
+            //CiroMaliyetKarChart(sqlBuAy,chartBuAy);
+            //CiroMaliyetKarChart(sqlAltiAy,charAltiAy);
+            //CiroMaliyetKarChart(sqlBuYil, chartBuYil);
+            //CiroMaliyetKarSutun(sqlBuHafta, chartHafta);
         }
 
         private void CheckEdit1_CheckedChanged(object sender, EventArgs e)
@@ -73,15 +73,15 @@ namespace FoxSoftware.UI.Raporlar
 
             List<Chart1DataSource> dt = new List<Chart1DataSource>();
 
-            foreach (DataRow item in res.Rows)
-            {
+            //foreach (DataRow item in res.Rows)
+            //{
 
-                dt.Add(new Chart1DataSource
-                {
-                    Arguments = item.Field<string>("Argument").ToString(),
-                    Value = Convert.ToInt32(item.Field<double>(1))
-                });
-            }
+            //    dt.Add(new Chart1DataSource
+            //    {
+            //        Arguments = item.Field<string>("Argument").ToString(),
+            //        Value = Convert.ToInt32(item.Field<double>(1))
+            //    });
+            //}
 
             chrtcont.Series.Clear();
             Series series1 = new Series("Chart", ViewType.Pie);

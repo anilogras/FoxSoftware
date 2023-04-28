@@ -48,6 +48,8 @@ namespace FoxSoftware.UI.Tanimlamalar
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.dataLayoutControl1 = new DevExpress.XtraDataLayout.DataLayoutControl();
+            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.SoyadiTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.musteriBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.TelefonNoTextEdit = new DevExpress.XtraEditors.TextEdit();
@@ -60,6 +62,7 @@ namespace FoxSoftware.UI.Tanimlamalar
             this.AdresAdresTextEdit = new DevExpress.XtraEditors.MemoEdit();
             this.AdresIlIdComboBoxEdit = new DevExpress.XtraEditors.LookUpEdit();
             this.AdresIlceIlIdComboBoxEdit = new DevExpress.XtraEditors.LookUpEdit();
+            this.textAdiAra = new DevExpress.XtraEditors.TextEdit();
             this.ItemForTelefonNo = new DevExpress.XtraLayout.LayoutControlItem();
             this.ItemForMail = new DevExpress.XtraLayout.LayoutControlItem();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
@@ -74,6 +77,11 @@ namespace FoxSoftware.UI.Tanimlamalar
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.ItemForAdresIlId = new DevExpress.XtraLayout.LayoutControlItem();
             this.ItemForAdresIlceIlId = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlGroup5 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.textSoyadiAra = new DevExpress.XtraEditors.TextEdit();
+            this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).BeginInit();
@@ -90,6 +98,8 @@ namespace FoxSoftware.UI.Tanimlamalar
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).BeginInit();
             this.dataLayoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SoyadiTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.musteriBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TelefonNoTextEdit.Properties)).BeginInit();
@@ -101,6 +111,7 @@ namespace FoxSoftware.UI.Tanimlamalar
             ((System.ComponentModel.ISupportInitialize)(this.AdresAdresTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AdresIlIdComboBoxEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AdresIlceIlIdComboBoxEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textAdiAra.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForTelefonNo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForMail)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
@@ -115,6 +126,11 @@ namespace FoxSoftware.UI.Tanimlamalar
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForAdresIlId)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForAdresIlceIlId)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textSoyadiAra.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbonPage2
@@ -254,6 +270,7 @@ namespace FoxSoftware.UI.Tanimlamalar
             // dataLayoutControl1
             // 
             this.dataLayoutControl1.AllowGeneratingNestedGroups = DevExpress.Utils.DefaultBoolean.True;
+            this.dataLayoutControl1.Controls.Add(this.gridControl1);
             this.dataLayoutControl1.Controls.Add(this.SoyadiTextEdit);
             this.dataLayoutControl1.Controls.Add(this.TelefonNoTextEdit);
             this.dataLayoutControl1.Controls.Add(this.MailTextEdit);
@@ -265,6 +282,8 @@ namespace FoxSoftware.UI.Tanimlamalar
             this.dataLayoutControl1.Controls.Add(this.AdresAdresTextEdit);
             this.dataLayoutControl1.Controls.Add(this.AdresIlIdComboBoxEdit);
             this.dataLayoutControl1.Controls.Add(this.AdresIlceIlIdComboBoxEdit);
+            this.dataLayoutControl1.Controls.Add(this.textAdiAra);
+            this.dataLayoutControl1.Controls.Add(this.textSoyadiAra);
             this.dataLayoutControl1.DataSource = this.musteriBindingSource;
             this.dataLayoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataLayoutControl1.HiddenItems.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
@@ -273,16 +292,35 @@ namespace FoxSoftware.UI.Tanimlamalar
             this.dataLayoutControl1.Location = new System.Drawing.Point(0, 0);
             this.dataLayoutControl1.Name = "dataLayoutControl1";
             this.dataLayoutControl1.Root = this.Root;
-            this.dataLayoutControl1.Size = new System.Drawing.Size(348, 410);
+            this.dataLayoutControl1.Size = new System.Drawing.Size(1078, 466);
             this.dataLayoutControl1.TabIndex = 0;
             this.dataLayoutControl1.Text = "dataLayoutControl1";
+            // 
+            // gridControl1
+            // 
+            this.gridControl1.Location = new System.Drawing.Point(354, 69);
+            this.gridControl1.MainView = this.gridView1;
+            this.gridControl1.Name = "gridControl1";
+            this.gridControl1.Size = new System.Drawing.Size(700, 373);
+            this.gridControl1.TabIndex = 20;
+            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
+            // 
+            // gridView1
+            // 
+            this.gridView1.GridControl = this.gridControl1;
+            this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsBehavior.Editable = false;
+            this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
             // SoyadiTextEdit
             // 
             this.SoyadiTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.musteriBindingSource, "Soyadi", true));
             this.SoyadiTextEdit.Location = new System.Drawing.Point(76, 82);
+            this.SoyadiTextEdit.MaximumSize = new System.Drawing.Size(250, 20);
+            this.SoyadiTextEdit.MinimumSize = new System.Drawing.Size(250, 20);
             this.SoyadiTextEdit.Name = "SoyadiTextEdit";
-            this.SoyadiTextEdit.Size = new System.Drawing.Size(248, 20);
+            this.SoyadiTextEdit.Size = new System.Drawing.Size(250, 20);
             this.SoyadiTextEdit.StyleController = this.dataLayoutControl1;
             this.SoyadiTextEdit.TabIndex = 5;
             // 
@@ -312,8 +350,10 @@ namespace FoxSoftware.UI.Tanimlamalar
             // 
             this.AdiTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.musteriBindingSource, "Adi", true));
             this.AdiTextEdit.Location = new System.Drawing.Point(76, 58);
+            this.AdiTextEdit.MaximumSize = new System.Drawing.Size(250, 20);
+            this.AdiTextEdit.MinimumSize = new System.Drawing.Size(250, 20);
             this.AdiTextEdit.Name = "AdiTextEdit";
-            this.AdiTextEdit.Size = new System.Drawing.Size(248, 20);
+            this.AdiTextEdit.Size = new System.Drawing.Size(250, 20);
             this.AdiTextEdit.StyleController = this.dataLayoutControl1;
             this.AdiTextEdit.TabIndex = 12;
             // 
@@ -321,8 +361,10 @@ namespace FoxSoftware.UI.Tanimlamalar
             // 
             this.TCKNTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.musteriBindingSource, "TCKN", true));
             this.TCKNTextEdit.Location = new System.Drawing.Point(76, 106);
+            this.TCKNTextEdit.MaximumSize = new System.Drawing.Size(250, 20);
+            this.TCKNTextEdit.MinimumSize = new System.Drawing.Size(250, 20);
             this.TCKNTextEdit.Name = "TCKNTextEdit";
-            this.TCKNTextEdit.Size = new System.Drawing.Size(248, 20);
+            this.TCKNTextEdit.Size = new System.Drawing.Size(250, 20);
             this.TCKNTextEdit.StyleController = this.dataLayoutControl1;
             this.TCKNTextEdit.TabIndex = 13;
             // 
@@ -330,8 +372,10 @@ namespace FoxSoftware.UI.Tanimlamalar
             // 
             this.TelefonNoNoTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.musteriBindingSource, "TelefonNo.No", true));
             this.TelefonNoNoTextEdit.Location = new System.Drawing.Point(76, 130);
+            this.TelefonNoNoTextEdit.MaximumSize = new System.Drawing.Size(250, 20);
+            this.TelefonNoNoTextEdit.MinimumSize = new System.Drawing.Size(250, 20);
             this.TelefonNoNoTextEdit.Name = "TelefonNoNoTextEdit";
-            this.TelefonNoNoTextEdit.Size = new System.Drawing.Size(248, 20);
+            this.TelefonNoNoTextEdit.Size = new System.Drawing.Size(250, 20);
             this.TelefonNoNoTextEdit.StyleController = this.dataLayoutControl1;
             this.TelefonNoNoTextEdit.TabIndex = 14;
             // 
@@ -339,17 +383,19 @@ namespace FoxSoftware.UI.Tanimlamalar
             // 
             this.MailMailAdresTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.musteriBindingSource, "Mail.MailAdres", true));
             this.MailMailAdresTextEdit.Location = new System.Drawing.Point(76, 154);
+            this.MailMailAdresTextEdit.MaximumSize = new System.Drawing.Size(250, 20);
+            this.MailMailAdresTextEdit.MinimumSize = new System.Drawing.Size(250, 20);
             this.MailMailAdresTextEdit.Name = "MailMailAdresTextEdit";
-            this.MailMailAdresTextEdit.Size = new System.Drawing.Size(248, 20);
+            this.MailMailAdresTextEdit.Size = new System.Drawing.Size(250, 20);
             this.MailMailAdresTextEdit.StyleController = this.dataLayoutControl1;
             this.MailMailAdresTextEdit.TabIndex = 16;
             // 
             // btnKaydet
             // 
             this.btnKaydet.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnKaydet.ImageOptions.Image")));
-            this.btnKaydet.Location = new System.Drawing.Point(24, 350);
+            this.btnKaydet.Location = new System.Drawing.Point(24, 406);
             this.btnKaydet.Name = "btnKaydet";
-            this.btnKaydet.Size = new System.Drawing.Size(300, 36);
+            this.btnKaydet.Size = new System.Drawing.Size(302, 36);
             this.btnKaydet.StyleController = this.dataLayoutControl1;
             this.btnKaydet.TabIndex = 17;
             this.btnKaydet.Text = "Kaydet";
@@ -360,7 +406,7 @@ namespace FoxSoftware.UI.Tanimlamalar
             this.AdresAdresTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.musteriBindingSource, "Adres.Adres", true));
             this.AdresAdresTextEdit.Location = new System.Drawing.Point(76, 226);
             this.AdresAdresTextEdit.Name = "AdresAdresTextEdit";
-            this.AdresAdresTextEdit.Size = new System.Drawing.Size(248, 120);
+            this.AdresAdresTextEdit.Size = new System.Drawing.Size(250, 176);
             this.AdresAdresTextEdit.StyleController = this.dataLayoutControl1;
             this.AdresAdresTextEdit.TabIndex = 15;
             // 
@@ -368,6 +414,8 @@ namespace FoxSoftware.UI.Tanimlamalar
             // 
             this.AdresIlIdComboBoxEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.musteriBindingSource, "Adres.IlId", true));
             this.AdresIlIdComboBoxEdit.Location = new System.Drawing.Point(76, 178);
+            this.AdresIlIdComboBoxEdit.MaximumSize = new System.Drawing.Size(250, 20);
+            this.AdresIlIdComboBoxEdit.MinimumSize = new System.Drawing.Size(250, 20);
             this.AdresIlIdComboBoxEdit.Name = "AdresIlIdComboBoxEdit";
             this.AdresIlIdComboBoxEdit.Properties.Appearance.Options.UseTextOptions = true;
             this.AdresIlIdComboBoxEdit.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
@@ -375,7 +423,7 @@ namespace FoxSoftware.UI.Tanimlamalar
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.AdresIlIdComboBoxEdit.Properties.NullText = "";
             this.AdresIlIdComboBoxEdit.Properties.PopupSizeable = false;
-            this.AdresIlIdComboBoxEdit.Size = new System.Drawing.Size(248, 20);
+            this.AdresIlIdComboBoxEdit.Size = new System.Drawing.Size(250, 20);
             this.AdresIlIdComboBoxEdit.StyleController = this.dataLayoutControl1;
             this.AdresIlIdComboBoxEdit.TabIndex = 19;
             // 
@@ -383,6 +431,8 @@ namespace FoxSoftware.UI.Tanimlamalar
             // 
             this.AdresIlceIlIdComboBoxEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.musteriBindingSource, "Adres.IlceId", true));
             this.AdresIlceIlIdComboBoxEdit.Location = new System.Drawing.Point(76, 202);
+            this.AdresIlceIlIdComboBoxEdit.MaximumSize = new System.Drawing.Size(250, 20);
+            this.AdresIlceIlIdComboBoxEdit.MinimumSize = new System.Drawing.Size(250, 20);
             this.AdresIlceIlIdComboBoxEdit.Name = "AdresIlceIlIdComboBoxEdit";
             this.AdresIlceIlIdComboBoxEdit.Properties.Appearance.Options.UseTextOptions = true;
             this.AdresIlceIlIdComboBoxEdit.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
@@ -390,9 +440,17 @@ namespace FoxSoftware.UI.Tanimlamalar
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.AdresIlceIlIdComboBoxEdit.Properties.NullText = "";
             this.AdresIlceIlIdComboBoxEdit.Properties.PopupSizeable = false;
-            this.AdresIlceIlIdComboBoxEdit.Size = new System.Drawing.Size(248, 20);
+            this.AdresIlceIlIdComboBoxEdit.Size = new System.Drawing.Size(250, 20);
             this.AdresIlceIlIdComboBoxEdit.StyleController = this.dataLayoutControl1;
             this.AdresIlceIlIdComboBoxEdit.TabIndex = 18;
+            // 
+            // textAdiAra
+            // 
+            this.textAdiAra.Location = new System.Drawing.Point(406, 45);
+            this.textAdiAra.Name = "textAdiAra";
+            this.textAdiAra.Size = new System.Drawing.Size(296, 20);
+            this.textAdiAra.StyleController = this.dataLayoutControl1;
+            this.textAdiAra.TabIndex = 21;
             // 
             // ItemForTelefonNo
             // 
@@ -419,7 +477,7 @@ namespace FoxSoftware.UI.Tanimlamalar
             this.Root.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlGroup2});
             this.Root.Name = "Root";
-            this.Root.Size = new System.Drawing.Size(348, 410);
+            this.Root.Size = new System.Drawing.Size(1078, 466);
             this.Root.TextVisible = false;
             // 
             // layoutControlGroup2
@@ -427,10 +485,11 @@ namespace FoxSoftware.UI.Tanimlamalar
             this.layoutControlGroup2.AllowDrawBackground = false;
             this.layoutControlGroup2.GroupBordersVisible = false;
             this.layoutControlGroup2.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutControlGroup3});
+            this.layoutControlGroup3,
+            this.layoutControlGroup5});
             this.layoutControlGroup2.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup2.Name = "autoGeneratedGroup0";
-            this.layoutControlGroup2.Size = new System.Drawing.Size(328, 390);
+            this.layoutControlGroup2.Size = new System.Drawing.Size(1058, 446);
             // 
             // layoutControlGroup3
             // 
@@ -447,7 +506,7 @@ namespace FoxSoftware.UI.Tanimlamalar
             this.ItemForAdresIlceIlId});
             this.layoutControlGroup3.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup3.Name = "layoutControlGroup3";
-            this.layoutControlGroup3.Size = new System.Drawing.Size(328, 390);
+            this.layoutControlGroup3.Size = new System.Drawing.Size(330, 446);
             this.layoutControlGroup3.Text = "Müşteri Bilgileri";
             // 
             // ItemForSoyadi
@@ -455,7 +514,7 @@ namespace FoxSoftware.UI.Tanimlamalar
             this.ItemForSoyadi.Control = this.SoyadiTextEdit;
             this.ItemForSoyadi.Location = new System.Drawing.Point(0, 24);
             this.ItemForSoyadi.Name = "ItemForSoyadi";
-            this.ItemForSoyadi.Size = new System.Drawing.Size(304, 24);
+            this.ItemForSoyadi.Size = new System.Drawing.Size(306, 24);
             this.ItemForSoyadi.Text = "Soyadi";
             this.ItemForSoyadi.TextSize = new System.Drawing.Size(49, 13);
             // 
@@ -464,7 +523,7 @@ namespace FoxSoftware.UI.Tanimlamalar
             this.ItemForAdi.Control = this.AdiTextEdit;
             this.ItemForAdi.Location = new System.Drawing.Point(0, 0);
             this.ItemForAdi.Name = "ItemForAdi";
-            this.ItemForAdi.Size = new System.Drawing.Size(304, 24);
+            this.ItemForAdi.Size = new System.Drawing.Size(306, 24);
             this.ItemForAdi.Text = "Adi";
             this.ItemForAdi.TextSize = new System.Drawing.Size(49, 13);
             // 
@@ -473,7 +532,7 @@ namespace FoxSoftware.UI.Tanimlamalar
             this.ItemForTCKN.Control = this.TCKNTextEdit;
             this.ItemForTCKN.Location = new System.Drawing.Point(0, 48);
             this.ItemForTCKN.Name = "ItemForTCKN";
-            this.ItemForTCKN.Size = new System.Drawing.Size(304, 24);
+            this.ItemForTCKN.Size = new System.Drawing.Size(306, 24);
             this.ItemForTCKN.Text = "T.C No";
             this.ItemForTCKN.TextSize = new System.Drawing.Size(49, 13);
             // 
@@ -482,7 +541,7 @@ namespace FoxSoftware.UI.Tanimlamalar
             this.ItemForTelefonNoNo.Control = this.TelefonNoNoTextEdit;
             this.ItemForTelefonNoNo.Location = new System.Drawing.Point(0, 72);
             this.ItemForTelefonNoNo.Name = "ItemForTelefonNoNo";
-            this.ItemForTelefonNoNo.Size = new System.Drawing.Size(304, 24);
+            this.ItemForTelefonNoNo.Size = new System.Drawing.Size(306, 24);
             this.ItemForTelefonNoNo.Text = "Telefon";
             this.ItemForTelefonNoNo.TextSize = new System.Drawing.Size(49, 13);
             // 
@@ -491,7 +550,7 @@ namespace FoxSoftware.UI.Tanimlamalar
             this.ItemForMailMailAdres.Control = this.MailMailAdresTextEdit;
             this.ItemForMailMailAdres.Location = new System.Drawing.Point(0, 96);
             this.ItemForMailMailAdres.Name = "ItemForMailMailAdres";
-            this.ItemForMailMailAdres.Size = new System.Drawing.Size(304, 24);
+            this.ItemForMailMailAdres.Size = new System.Drawing.Size(306, 24);
             this.ItemForMailMailAdres.Text = "Mail Adres";
             this.ItemForMailMailAdres.TextSize = new System.Drawing.Size(49, 13);
             // 
@@ -500,16 +559,16 @@ namespace FoxSoftware.UI.Tanimlamalar
             this.ItemForAdresAdres.Control = this.AdresAdresTextEdit;
             this.ItemForAdresAdres.Location = new System.Drawing.Point(0, 168);
             this.ItemForAdresAdres.Name = "ItemForAdresAdres";
-            this.ItemForAdresAdres.Size = new System.Drawing.Size(304, 124);
+            this.ItemForAdresAdres.Size = new System.Drawing.Size(306, 180);
             this.ItemForAdresAdres.Text = "Adres";
             this.ItemForAdresAdres.TextSize = new System.Drawing.Size(49, 13);
             // 
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.btnKaydet;
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 292);
+            this.layoutControlItem3.Location = new System.Drawing.Point(0, 348);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(304, 40);
+            this.layoutControlItem3.Size = new System.Drawing.Size(306, 40);
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
             // 
@@ -518,7 +577,7 @@ namespace FoxSoftware.UI.Tanimlamalar
             this.ItemForAdresIlId.Control = this.AdresIlIdComboBoxEdit;
             this.ItemForAdresIlId.Location = new System.Drawing.Point(0, 120);
             this.ItemForAdresIlId.Name = "ItemForAdresIlId";
-            this.ItemForAdresIlId.Size = new System.Drawing.Size(304, 24);
+            this.ItemForAdresIlId.Size = new System.Drawing.Size(306, 24);
             this.ItemForAdresIlId.Text = "Şehir";
             this.ItemForAdresIlId.TextSize = new System.Drawing.Size(49, 13);
             // 
@@ -527,15 +586,62 @@ namespace FoxSoftware.UI.Tanimlamalar
             this.ItemForAdresIlceIlId.Control = this.AdresIlceIlIdComboBoxEdit;
             this.ItemForAdresIlceIlId.Location = new System.Drawing.Point(0, 144);
             this.ItemForAdresIlceIlId.Name = "ItemForAdresIlceIlId";
-            this.ItemForAdresIlceIlId.Size = new System.Drawing.Size(304, 24);
+            this.ItemForAdresIlceIlId.Size = new System.Drawing.Size(306, 24);
             this.ItemForAdresIlceIlId.Text = "İlçe";
             this.ItemForAdresIlceIlId.TextSize = new System.Drawing.Size(49, 13);
+            // 
+            // layoutControlGroup5
+            // 
+            this.layoutControlGroup5.CustomizationFormText = "Müşteri Bilgileri";
+            this.layoutControlGroup5.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlItem1,
+            this.layoutControlItem4,
+            this.layoutControlItem7});
+            this.layoutControlGroup5.Location = new System.Drawing.Point(330, 0);
+            this.layoutControlGroup5.Name = "layoutControlGroup5";
+            this.layoutControlGroup5.Size = new System.Drawing.Size(728, 446);
+            this.layoutControlGroup5.Text = "Müşteri Arama";
+            // 
+            // layoutControlItem1
+            // 
+            this.layoutControlItem1.Control = this.gridControl1;
+            this.layoutControlItem1.Location = new System.Drawing.Point(0, 24);
+            this.layoutControlItem1.Name = "layoutControlItem1";
+            this.layoutControlItem1.Size = new System.Drawing.Size(704, 377);
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem1.TextVisible = false;
+            // 
+            // layoutControlItem4
+            // 
+            this.layoutControlItem4.Control = this.textAdiAra;
+            this.layoutControlItem4.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem4.Name = "layoutControlItem4";
+            this.layoutControlItem4.Size = new System.Drawing.Size(352, 24);
+            this.layoutControlItem4.Text = "Adı : ";
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(49, 13);
+            // 
+            // textSoyadiAra
+            // 
+            this.textSoyadiAra.Location = new System.Drawing.Point(758, 45);
+            this.textSoyadiAra.Name = "textSoyadiAra";
+            this.textSoyadiAra.Size = new System.Drawing.Size(296, 20);
+            this.textSoyadiAra.StyleController = this.dataLayoutControl1;
+            this.textSoyadiAra.TabIndex = 22;
+            // 
+            // layoutControlItem7
+            // 
+            this.layoutControlItem7.Control = this.textSoyadiAra;
+            this.layoutControlItem7.Location = new System.Drawing.Point(352, 0);
+            this.layoutControlItem7.Name = "layoutControlItem7";
+            this.layoutControlItem7.Size = new System.Drawing.Size(352, 24);
+            this.layoutControlItem7.Text = "Soyadı :";
+            this.layoutControlItem7.TextSize = new System.Drawing.Size(49, 13);
             // 
             // FrmMusteriTanim
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(348, 410);
+            this.ClientSize = new System.Drawing.Size(1078, 466);
             this.Controls.Add(this.dataLayoutControl1);
             this.Name = "FrmMusteriTanim";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -557,6 +663,8 @@ namespace FoxSoftware.UI.Tanimlamalar
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).EndInit();
             this.dataLayoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SoyadiTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.musteriBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TelefonNoTextEdit.Properties)).EndInit();
@@ -568,6 +676,7 @@ namespace FoxSoftware.UI.Tanimlamalar
             ((System.ComponentModel.ISupportInitialize)(this.AdresAdresTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.AdresIlIdComboBoxEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.AdresIlceIlIdComboBoxEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textAdiAra.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForTelefonNo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForMail)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
@@ -582,6 +691,11 @@ namespace FoxSoftware.UI.Tanimlamalar
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForAdresIlId)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForAdresIlceIlId)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textSoyadiAra.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -630,5 +744,13 @@ namespace FoxSoftware.UI.Tanimlamalar
         private DevExpress.XtraEditors.LookUpEdit AdresIlceIlIdComboBoxEdit;
         private DevExpress.XtraEditors.LookUpEdit AdresIlIdComboBoxEdit;
         private DevExpress.XtraLayout.LayoutControlItem ItemForAdresIlId;
+        private DevExpress.XtraGrid.GridControl gridControl1;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup5;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
+        private DevExpress.XtraEditors.TextEdit textAdiAra;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
+        private DevExpress.XtraEditors.TextEdit textSoyadiAra;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
     }
 }

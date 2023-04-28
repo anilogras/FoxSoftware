@@ -31,7 +31,7 @@ namespace FoxSoftware.DataAccess
             {
                 dbConfig = sat1;
             }
-            return @"Data Source="+dbConfig+";Initial Catalog=Stok_Takip_Yeni;Integrated Security =true;";
+            return @"Data Source="+dbConfig+";Initial Catalog=Stok_Takip;Integrated Security =true;";
         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -58,5 +58,7 @@ namespace FoxSoftware.DataAccess
         public DbSet<TelefonNo> TelefonNo { get; set; }
         public DbSet<Urun> Urun { get; set; }
         public DbSet<UrunTur> UrunTur{ get; set; }
+        public DbSet<OdemeYontemi> OdemeYontemis { get; set; }
+
     }
 }

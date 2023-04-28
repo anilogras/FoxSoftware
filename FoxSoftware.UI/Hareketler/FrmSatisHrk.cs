@@ -107,7 +107,16 @@ namespace FoxSoftware.UI.Hareketler
                 int snc = _BusinesUOW.Complete();
                 var r = UIHelper.MesajVer();
                 this.DialogResult = DialogResult.OK;
+                this.Hide();
                 this.Close();
+                //FrmSatisHrk frmsatis = new FrmSatisHrk();
+                //frmsatis.Show();
+                ViewFormModel<SatHrkAna> model = new ViewFormModel<SatHrkAna>();
+                model.Model = _BusinesUOW.SatHrkAnaRepository.CreateNewModel();
+                model.Context = _BusinesUOW.GetContext();
+                FrmSatisHrk btanim2 = new FrmSatisHrk(model);
+                //DialogResult result = btanim2.ShowDialog();
+                btanim2.Show();
             }
         }
         private void GridView1_InitNewRow(object sender, DevExpress.XtraGrid.Views.Grid.InitNewRowEventArgs e)
@@ -171,6 +180,10 @@ namespace FoxSoftware.UI.Hareketler
             lkpMusteri.Properties.ValueMember = "Id";
             lkpMusteri.Properties.DataSource = _BusinesUOW.MusteriRepository.GetAll().Select(x => new { x.Id, x.MusteriAdSoyad, x.TCKN , Telefon = x.TelefonNo.No});
             KolonGizle(lkpMusteri);
+            lkpOdemeYontemi.Properties.DisplayMember = "Adi";
+            lkpOdemeYontemi.Properties.ValueMember = "Id";
+            lkpOdemeYontemi.Properties.DataSource = _BusinesUOW.OdemeYontemiRepository.GetAll().Select(x => new { x.Id, x.Adi });
+            KolonGizle(lkpOdemeYontemi);
 
             if (checkEdit1.Checked == true)
             {
@@ -226,6 +239,7 @@ namespace FoxSoftware.UI.Hareketler
                 ItemForSatisTipi.Enabled = false;
                 ItemForTarih.Enabled = false;
                 layoutControlItem2.Enabled = false;
+                ItemForOdemeYontemiId.Enabled = false;
                 ItemForKargoTakipNo.Enabled = false;
                 checkEditKargoVerildi.Enabled = false;
 
@@ -262,6 +276,7 @@ namespace FoxSoftware.UI.Hareketler
                 ItemForSatisTipi.Enabled = true;
                 ItemForTarih.Enabled = true;
                 layoutControlItem2.Enabled = true;
+                ItemForOdemeYontemiId.Enabled = true;
                 ItemForKargoTakipNo.Enabled = true;
                 checkEditKargoVerildi.Enabled = true;
                 //gridView1.Appearance.Row.BackColor = Color.Silver;

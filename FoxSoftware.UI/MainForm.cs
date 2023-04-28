@@ -336,8 +336,8 @@ namespace FoxSoftware.UI
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            barButtonItem23.PerformClick();
-            barButtonItem29.PerformClick();
+            //barButtonItem23.PerformClick();
+            //barButtonItem29.PerformClick();
         }
 
         private void barButtonItem28_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -372,8 +372,17 @@ namespace FoxSoftware.UI
 
         private void btnTransferForm_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-                TransferForm trform = new TransferForm();
-                trform.Show();
+            if (Application.OpenForms["frmpopulermusteri"] == null)  // Form açık mı?
+            {
+                frmpopulermusteri frmmusteri = new frmpopulermusteri();
+                frmmusteri.MdiParent = this;
+                frmmusteri.Show();
+            }
+            else
+            {
+                var activeList = this.MdiChildren.Where(x => x.Name == "frmpopulermusteri").FirstOrDefault();
+                this.ActiveControl = activeList;
+            }
         }
     }
 }

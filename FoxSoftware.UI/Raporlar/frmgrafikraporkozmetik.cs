@@ -29,9 +29,9 @@ namespace FoxSoftware.UI.Raporlar
 
         private void Frmgrafikrapor_Load(object sender, EventArgs e)
         {
-            RaporTipi();
+            //RaporTipi();
             btnYenile.PerformClick();
-            UISqlHelper.NowDateTime(dateEdit1, dateEdit2);
+            //UISqlHelper.NowDateTime(dateEdit1, dateEdit2);
         }
         private void BtnYenile_Click(object sender, EventArgs e)
         {
@@ -54,10 +54,7 @@ namespace FoxSoftware.UI.Raporlar
             string sqlBuHafta = "SET language turkish select case when datename(dw,convert(date,sana.Tarih)) like 'Pazartesi' then '1 ' +datename(dw,convert(date,sana.Tarih)) when datename(dw,convert(date,sana.Tarih)) like '%Sal%' then '2 '+datename(dw,convert(date,sana.Tarih)) when datename(dw,convert(date,sana.Tarih)) like '%Çar%' then '3 '+datename(dw,convert(date,sana.Tarih)) when datename(dw,convert(date,sana.Tarih)) like '%Per%' then '4 '+datename(dw,convert(date,sana.Tarih)) when datename(dw,convert(date,sana.Tarih)) like 'Cuma' then '5 '+datename(dw,convert(date,sana.Tarih)) when datename(dw,convert(date,sana.Tarih)) like 'Cumartesi' then '6 '+datename(dw,convert(date,sana.Tarih)) when datename(dw,convert(date,sana.Tarih)) like 'Pazar' then '7 '+datename(dw,convert(date,sana.Tarih)) end as 'Argument', sum(sdet.BirimFiyat)*sum(sdet.Miktar) as 'Value1', (sum(sdet.BirimFiyat)*sum(sdet.Miktar))-(sum(Maliyet)*sum(sdet.Miktar)) as 'Value2' from SatHrkDetays sdet left join SatHrkAnas sana on sana.Id = sdet.SatHrkAnaId left join Uruns urun on urun.Id = sdet.UrunId where urun.SatisTipi = 2 and sana.Tarih >= " + str_Bu_Hafta_ilkGun + " group by datename(dw,convert(date,sana.Tarih)) order by 'Argument'";
             PieChartLoad(sqlUrun,chartCinsiyet);
             PieChartLoad(sqlSehir, chartSehir);
-            CiroMaliyetKarChart(sqlBuAy,chartBuAy);
-            CiroMaliyetKarChart(sqlAltiAy,charAltiAy);
-            CiroMaliyetKarChart(sqlBuYil, chartBuYil);
-            CiroMaliyetKarSutun(sqlBuHafta, chartHafta);
+            //CiroMaliyetKarChart(sqlBuAy,chartBuAy);
         }
 
         private void CheckEdit1_CheckedChanged(object sender, EventArgs e)

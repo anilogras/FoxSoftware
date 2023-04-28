@@ -1,4 +1,5 @@
-﻿using FoxSoftware.Business.Services;
+﻿using DevExpress.XtraGrid;
+using FoxSoftware.Business.Services;
 using FoxSoftware.DataAccess;
 using System;
 using System.Collections.Generic;
@@ -43,9 +44,22 @@ namespace FoxSoftware.UI.Raporlar
         }
         private void simpleButton1_Click(object sender, EventArgs e)
         {
+            GridColumnSummaryItem item1 = new GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Ciro", "Top: {0}");
+            GridColumnSummaryItem item2 = new GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Maliyet", "Top: {0}");
+            GridColumnSummaryItem item3 = new GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Kâr", "Top: {0}");
+
+            if (gridView1.Columns.Count > 0)
+            {
+                gridView1.Columns["Ciro"].Summary.Clear();
+                gridView1.Columns["Maliyet"].Summary.Clear();
+                gridView1.Columns["Kâr"].Summary.Clear();
+            }
             string sorgu = "SET language turkish Select ss.tar as 'YIL',sum(shrkdetay.Miktar)*sum(shrkdetay.BirimFiyat) as 'Ciro',sum(urun.Maliyet) as 'Maliyet',(sum(shrkdetay.Miktar)*sum(shrkdetay.BirimFiyat))-sum(urun.Maliyet)as 'Kâr' from SatHrkAnas shrkana left join SatHrkDetays shrkdetay on shrkdetay.SatHrkAnaId = shrkana.Id left join Uruns urun on urun.Id = shrkdetay.UrunId left join (select SUBSTRING((convert(varchar, s.Tarih, 120)),1,4) as tar, s.id from SatHrkAnas s) as ss on ss.Id = shrkana.Id where shrkana.Silinmis=0 and shrkdetay.Silinmis=0 and shrkana.SatisTipi=" + satistipi.ToString()+" group by ss.tar";
             var res = _BusinesUOW.SatHrkAnaRepository.GetSQLResult(sorgu);
             gridControl1.DataSource = res;
+            gridView1.Columns["Ciro"].Summary.Add(item1);
+            gridView1.Columns["Maliyet"].Summary.Add(item2);
+            gridView1.Columns["Kâr"].Summary.Add(item3);
         }
     }
 }

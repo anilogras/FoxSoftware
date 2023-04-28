@@ -85,6 +85,7 @@ namespace FoxSoftware.UI.Raporlar
             // 
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsView.ShowFooter = true;
             // 
             // simpleButton1
             // 
@@ -180,7 +181,7 @@ namespace FoxSoftware.UI.Raporlar
             this.ClientSize = new System.Drawing.Size(905, 553);
             this.Controls.Add(this.dataLayoutControl1);
             this.Name = "frmyillikmaliyet";
-            this.Text = "Aylık Maliyet Raporu";
+            this.Text = "Yıllık Maliyet Raporu";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmmaliyet_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).EndInit();

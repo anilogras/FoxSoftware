@@ -33,77 +33,46 @@ namespace FoxSoftware.UI.Raporlar
             DevExpress.XtraCharts.Series series1 = new DevExpress.XtraCharts.Series();
             DevExpress.XtraCharts.PieSeriesView pieSeriesView1 = new DevExpress.XtraCharts.PieSeriesView();
             DevExpress.XtraCharts.ChartTitle chartTitle1 = new DevExpress.XtraCharts.ChartTitle();
-            DevExpress.XtraCharts.XYDiagram xyDiagram1 = new DevExpress.XtraCharts.XYDiagram();
             DevExpress.XtraCharts.Series series2 = new DevExpress.XtraCharts.Series();
-            DevExpress.XtraCharts.Series series3 = new DevExpress.XtraCharts.Series();
-            DevExpress.XtraCharts.Series series4 = new DevExpress.XtraCharts.Series();
-            DevExpress.XtraCharts.ChartTitle chartTitle2 = new DevExpress.XtraCharts.ChartTitle();
-            DevExpress.XtraCharts.Series series5 = new DevExpress.XtraCharts.Series();
             DevExpress.XtraCharts.SeriesPoint seriesPoint1 = new DevExpress.XtraCharts.SeriesPoint("Ciro", null, 0);
             DevExpress.XtraCharts.SeriesPoint seriesPoint2 = new DevExpress.XtraCharts.SeriesPoint("Maliyet", null, 1);
             DevExpress.XtraCharts.SeriesPoint seriesPoint3 = new DevExpress.XtraCharts.SeriesPoint("Kâr", null, 2);
             DevExpress.XtraCharts.PieSeriesView pieSeriesView2 = new DevExpress.XtraCharts.PieSeriesView();
-            DevExpress.XtraCharts.ChartTitle chartTitle3 = new DevExpress.XtraCharts.ChartTitle();
-            DevExpress.XtraCharts.Series series6 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.ChartTitle chartTitle2 = new DevExpress.XtraCharts.ChartTitle();
+            DevExpress.XtraCharts.Series series3 = new DevExpress.XtraCharts.Series();
             DevExpress.XtraCharts.PieSeriesView pieSeriesView3 = new DevExpress.XtraCharts.PieSeriesView();
-            DevExpress.XtraCharts.ChartTitle chartTitle4 = new DevExpress.XtraCharts.ChartTitle();
-            DevExpress.XtraCharts.Series series7 = new DevExpress.XtraCharts.Series();
-            DevExpress.XtraCharts.SeriesPoint seriesPoint4 = new DevExpress.XtraCharts.SeriesPoint("Ciro", null, 0);
-            DevExpress.XtraCharts.SeriesPoint seriesPoint5 = new DevExpress.XtraCharts.SeriesPoint("Maliyet", null, 1);
-            DevExpress.XtraCharts.SeriesPoint seriesPoint6 = new DevExpress.XtraCharts.SeriesPoint("Kâr", null, 2);
-            DevExpress.XtraCharts.PieSeriesView pieSeriesView4 = new DevExpress.XtraCharts.PieSeriesView();
-            DevExpress.XtraCharts.ChartTitle chartTitle5 = new DevExpress.XtraCharts.ChartTitle();
-            DevExpress.XtraCharts.Series series8 = new DevExpress.XtraCharts.Series();
-            DevExpress.XtraCharts.PieSeriesView pieSeriesView5 = new DevExpress.XtraCharts.PieSeriesView();
-            DevExpress.XtraCharts.ChartTitle chartTitle6 = new DevExpress.XtraCharts.ChartTitle();
+            DevExpress.XtraCharts.ChartTitle chartTitle3 = new DevExpress.XtraCharts.ChartTitle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmgrafikraporkozmetik));
             this.dataLayoutControl1 = new DevExpress.XtraDataLayout.DataLayoutControl();
             this.chartSehir = new DevExpress.XtraCharts.ChartControl();
-            this.chartHafta = new DevExpress.XtraCharts.ChartControl();
-            this.charAltiAy = new DevExpress.XtraCharts.ChartControl();
-            this.chartBuYil = new DevExpress.XtraCharts.ChartControl();
             this.chartBuAy = new DevExpress.XtraCharts.ChartControl();
             this.chartCinsiyet = new DevExpress.XtraCharts.ChartControl();
+            this.btnRaporla = new DevExpress.XtraEditors.SimpleButton();
             this.checkEdit1 = new DevExpress.XtraEditors.CheckEdit();
             this.dateEdit1 = new DevExpress.XtraEditors.DateEdit();
             this.dateEdit2 = new DevExpress.XtraEditors.DateEdit();
+            this.btnYenile = new DevExpress.XtraEditors.SimpleButton();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem13 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.btnRaporla = new DevExpress.XtraEditors.SimpleButton();
-            this.btnYenile = new DevExpress.XtraEditors.SimpleButton();
-            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem13 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).BeginInit();
             this.dataLayoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartSehir)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(series1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(pieSeriesView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chartHafta)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(xyDiagram1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.charAltiAy)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(pieSeriesView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chartBuYil)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(pieSeriesView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartBuAy)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(pieSeriesView4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(pieSeriesView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartCinsiyet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(pieSeriesView5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(pieSeriesView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).BeginInit();
@@ -112,16 +81,13 @@ namespace FoxSoftware.UI.Raporlar
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).BeginInit();
             this.SuspendLayout();
             // 
             // splashScreenManager1
@@ -131,9 +97,6 @@ namespace FoxSoftware.UI.Raporlar
             // dataLayoutControl1
             // 
             this.dataLayoutControl1.Controls.Add(this.chartSehir);
-            this.dataLayoutControl1.Controls.Add(this.chartHafta);
-            this.dataLayoutControl1.Controls.Add(this.charAltiAy);
-            this.dataLayoutControl1.Controls.Add(this.chartBuYil);
             this.dataLayoutControl1.Controls.Add(this.chartBuAy);
             this.dataLayoutControl1.Controls.Add(this.chartCinsiyet);
             this.dataLayoutControl1.Controls.Add(this.btnRaporla);
@@ -158,85 +121,30 @@ namespace FoxSoftware.UI.Raporlar
             series1.View = pieSeriesView1;
             this.chartSehir.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
         series1};
-            this.chartSehir.Size = new System.Drawing.Size(580, 230);
+            this.chartSehir.Size = new System.Drawing.Size(1165, 465);
             this.chartSehir.TabIndex = 18;
             chartTitle1.Text = "En Çok Satılan 10 Şehir";
             this.chartSehir.Titles.AddRange(new DevExpress.XtraCharts.ChartTitle[] {
             chartTitle1});
-            // 
-            // chartHafta
-            // 
-            xyDiagram1.AxisX.VisibleInPanesSerializable = "-1";
-            xyDiagram1.AxisY.VisibleInPanesSerializable = "-1";
-            this.chartHafta.Diagram = xyDiagram1;
-            this.chartHafta.Legend.Name = "Default Legend";
-            this.chartHafta.Location = new System.Drawing.Point(12, 520);
-            this.chartHafta.Name = "chartHafta";
-            series2.Name = "Series 1";
-            series3.Name = "Series 2";
-            series4.Name = "Series 3";
-            this.chartHafta.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
-        series2,
-        series3,
-        series4};
-            this.chartHafta.Size = new System.Drawing.Size(580, 231);
-            this.chartHafta.TabIndex = 17;
-            chartTitle2.Text = "Haftalık Ciro/Kâr";
-            this.chartHafta.Titles.AddRange(new DevExpress.XtraCharts.ChartTitle[] {
-            chartTitle2});
-            // 
-            // charAltiAy
-            // 
-            this.charAltiAy.Legend.Name = "Default Legend";
-            this.charAltiAy.Location = new System.Drawing.Point(596, 286);
-            this.charAltiAy.Name = "charAltiAy";
-            series5.Name = "Series 1";
-            series5.Points.AddRange(new DevExpress.XtraCharts.SeriesPoint[] {
-            seriesPoint1,
-            seriesPoint2,
-            seriesPoint3});
-            series5.View = pieSeriesView2;
-            this.charAltiAy.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
-        series5};
-            this.charAltiAy.Size = new System.Drawing.Size(581, 230);
-            this.charAltiAy.TabIndex = 16;
-            chartTitle3.Text = "Son 6 Ay Ciro/Maliyet/Kâr";
-            this.charAltiAy.Titles.AddRange(new DevExpress.XtraCharts.ChartTitle[] {
-            chartTitle3});
-            // 
-            // chartBuYil
-            // 
-            this.chartBuYil.Legend.Name = "Default Legend";
-            this.chartBuYil.Location = new System.Drawing.Point(596, 520);
-            this.chartBuYil.Name = "chartBuYil";
-            series6.Name = "Erkek";
-            series6.View = pieSeriesView3;
-            this.chartBuYil.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
-        series6};
-            this.chartBuYil.Size = new System.Drawing.Size(581, 231);
-            this.chartBuYil.TabIndex = 15;
-            chartTitle4.Text = "Bu Yıl Ciro/Maliyet/Kâr";
-            this.chartBuYil.Titles.AddRange(new DevExpress.XtraCharts.ChartTitle[] {
-            chartTitle4});
             // 
             // chartBuAy
             // 
             this.chartBuAy.Legend.Name = "Default Legend";
             this.chartBuAy.Location = new System.Drawing.Point(596, 52);
             this.chartBuAy.Name = "chartBuAy";
-            series7.Name = "Series 1";
-            series7.Points.AddRange(new DevExpress.XtraCharts.SeriesPoint[] {
-            seriesPoint4,
-            seriesPoint5,
-            seriesPoint6});
-            series7.View = pieSeriesView4;
+            series2.Name = "Series 1";
+            series2.Points.AddRange(new DevExpress.XtraCharts.SeriesPoint[] {
+            seriesPoint1,
+            seriesPoint2,
+            seriesPoint3});
+            series2.View = pieSeriesView2;
             this.chartBuAy.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
-        series7};
+        series2};
             this.chartBuAy.Size = new System.Drawing.Size(581, 230);
             this.chartBuAy.TabIndex = 14;
-            chartTitle5.Text = "Bu Ay Ciro/Maliyet/Kâr";
+            chartTitle2.Text = "Bu Ay Ciro/Maliyet/Kâr";
             this.chartBuAy.Titles.AddRange(new DevExpress.XtraCharts.ChartTitle[] {
-            chartTitle5});
+            chartTitle2});
             // 
             // chartCinsiyet
             // 
@@ -245,17 +153,31 @@ namespace FoxSoftware.UI.Raporlar
             this.chartCinsiyet.Legend.Name = "Default Legend";
             this.chartCinsiyet.Location = new System.Drawing.Point(12, 52);
             this.chartCinsiyet.Name = "chartCinsiyet";
-            series8.Name = "Erkek";
-            series8.View = pieSeriesView5;
+            series3.Name = "Erkek";
+            series3.View = pieSeriesView3;
             this.chartCinsiyet.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
-        series8};
+        series3};
             this.chartCinsiyet.Size = new System.Drawing.Size(580, 230);
             this.chartCinsiyet.SmallChartText.Tag = "";
             this.chartCinsiyet.SmallChartText.Text = "";
             this.chartCinsiyet.TabIndex = 7;
-            chartTitle6.Text = "En Çok Satılan 10 Ürün";
+            chartTitle3.Text = "En Çok Satılan 10 Ürün";
             this.chartCinsiyet.Titles.AddRange(new DevExpress.XtraCharts.ChartTitle[] {
-            chartTitle6});
+            chartTitle3});
+            // 
+            // btnRaporla
+            // 
+            this.btnRaporla.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnRaporla.Appearance.Options.UseFont = true;
+            this.btnRaporla.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnRaporla.ImageOptions.Image")));
+            this.btnRaporla.Location = new System.Drawing.Point(455, 12);
+            this.btnRaporla.MaximumSize = new System.Drawing.Size(200, 0);
+            this.btnRaporla.MinimumSize = new System.Drawing.Size(200, 0);
+            this.btnRaporla.Name = "btnRaporla";
+            this.btnRaporla.Size = new System.Drawing.Size(200, 36);
+            this.btnRaporla.StyleController = this.dataLayoutControl1;
+            this.btnRaporla.TabIndex = 6;
+            this.btnRaporla.Text = "Raporla";
             // 
             // checkEdit1
             // 
@@ -300,6 +222,20 @@ namespace FoxSoftware.UI.Raporlar
             this.dateEdit2.StyleController = this.dataLayoutControl1;
             this.dateEdit2.TabIndex = 10;
             // 
+            // btnYenile
+            // 
+            this.btnYenile.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnYenile.Appearance.Options.UseFont = true;
+            this.btnYenile.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnYenile.ImageOptions.Image")));
+            this.btnYenile.Location = new System.Drawing.Point(659, 12);
+            this.btnYenile.MaximumSize = new System.Drawing.Size(200, 0);
+            this.btnYenile.MinimumSize = new System.Drawing.Size(200, 0);
+            this.btnYenile.Name = "btnYenile";
+            this.btnYenile.Size = new System.Drawing.Size(200, 36);
+            this.btnYenile.StyleController = this.dataLayoutControl1;
+            this.btnYenile.TabIndex = 11;
+            this.btnYenile.Text = "YENİLE";
+            // 
             // Root
             // 
             this.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
@@ -312,10 +248,7 @@ namespace FoxSoftware.UI.Raporlar
             this.layoutControlItem7,
             this.layoutControlItem1,
             this.emptySpaceItem1,
-            this.layoutControlItem11,
-            this.layoutControlItem10,
             this.layoutControlItem9,
-            this.layoutControlItem12,
             this.layoutControlItem13});
             this.Root.Name = "Root";
             this.Root.Size = new System.Drawing.Size(1189, 763);
@@ -339,6 +272,15 @@ namespace FoxSoftware.UI.Raporlar
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem5.TextVisible = false;
             // 
+            // layoutControlItem3
+            // 
+            this.layoutControlItem3.Control = this.btnRaporla;
+            this.layoutControlItem3.Location = new System.Drawing.Point(443, 0);
+            this.layoutControlItem3.Name = "layoutControlItem3";
+            this.layoutControlItem3.Size = new System.Drawing.Size(204, 40);
+            this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem3.TextVisible = false;
+            // 
             // layoutControlItem6
             // 
             this.layoutControlItem6.Control = this.dateEdit1;
@@ -357,6 +299,15 @@ namespace FoxSoftware.UI.Raporlar
             this.layoutControlItem7.Text = "Son Tarih";
             this.layoutControlItem7.TextSize = new System.Drawing.Size(45, 13);
             // 
+            // layoutControlItem1
+            // 
+            this.layoutControlItem1.Control = this.btnYenile;
+            this.layoutControlItem1.Location = new System.Drawing.Point(647, 0);
+            this.layoutControlItem1.Name = "layoutControlItem1";
+            this.layoutControlItem1.Size = new System.Drawing.Size(204, 40);
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem1.TextVisible = false;
+            // 
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
@@ -364,15 +315,6 @@ namespace FoxSoftware.UI.Raporlar
             this.emptySpaceItem1.Name = "emptySpaceItem1";
             this.emptySpaceItem1.Size = new System.Drawing.Size(318, 40);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
-            // 
-            // layoutControlItem12
-            // 
-            this.layoutControlItem12.Control = this.chartHafta;
-            this.layoutControlItem12.Location = new System.Drawing.Point(0, 508);
-            this.layoutControlItem12.Name = "layoutControlItem12";
-            this.layoutControlItem12.Size = new System.Drawing.Size(584, 235);
-            this.layoutControlItem12.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem12.TextVisible = false;
             // 
             // layoutControlItem9
             // 
@@ -383,78 +325,14 @@ namespace FoxSoftware.UI.Raporlar
             this.layoutControlItem9.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem9.TextVisible = false;
             // 
-            // layoutControlItem11
-            // 
-            this.layoutControlItem11.Control = this.charAltiAy;
-            this.layoutControlItem11.Location = new System.Drawing.Point(584, 274);
-            this.layoutControlItem11.Name = "layoutControlItem11";
-            this.layoutControlItem11.Size = new System.Drawing.Size(585, 234);
-            this.layoutControlItem11.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem11.TextVisible = false;
-            // 
-            // layoutControlItem10
-            // 
-            this.layoutControlItem10.Control = this.chartBuYil;
-            this.layoutControlItem10.Location = new System.Drawing.Point(584, 508);
-            this.layoutControlItem10.Name = "layoutControlItem10";
-            this.layoutControlItem10.Size = new System.Drawing.Size(585, 235);
-            this.layoutControlItem10.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem10.TextVisible = false;
-            // 
             // layoutControlItem13
             // 
             this.layoutControlItem13.Control = this.chartSehir;
             this.layoutControlItem13.Location = new System.Drawing.Point(0, 274);
             this.layoutControlItem13.Name = "layoutControlItem13";
-            this.layoutControlItem13.Size = new System.Drawing.Size(584, 234);
+            this.layoutControlItem13.Size = new System.Drawing.Size(1169, 469);
             this.layoutControlItem13.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem13.TextVisible = false;
-            // 
-            // btnRaporla
-            // 
-            this.btnRaporla.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnRaporla.Appearance.Options.UseFont = true;
-            this.btnRaporla.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnRaporla.ImageOptions.Image")));
-            this.btnRaporla.Location = new System.Drawing.Point(455, 12);
-            this.btnRaporla.MaximumSize = new System.Drawing.Size(200, 0);
-            this.btnRaporla.MinimumSize = new System.Drawing.Size(200, 0);
-            this.btnRaporla.Name = "btnRaporla";
-            this.btnRaporla.Size = new System.Drawing.Size(200, 36);
-            this.btnRaporla.StyleController = this.dataLayoutControl1;
-            this.btnRaporla.TabIndex = 6;
-            this.btnRaporla.Text = "Raporla";
-            // 
-            // btnYenile
-            // 
-            this.btnYenile.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnYenile.Appearance.Options.UseFont = true;
-            this.btnYenile.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnYenile.ImageOptions.Image")));
-            this.btnYenile.Location = new System.Drawing.Point(659, 12);
-            this.btnYenile.MaximumSize = new System.Drawing.Size(200, 0);
-            this.btnYenile.MinimumSize = new System.Drawing.Size(200, 0);
-            this.btnYenile.Name = "btnYenile";
-            this.btnYenile.Size = new System.Drawing.Size(200, 36);
-            this.btnYenile.StyleController = this.dataLayoutControl1;
-            this.btnYenile.TabIndex = 11;
-            this.btnYenile.Text = "YENİLE";
-            // 
-            // layoutControlItem3
-            // 
-            this.layoutControlItem3.Control = this.btnRaporla;
-            this.layoutControlItem3.Location = new System.Drawing.Point(443, 0);
-            this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(204, 40);
-            this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem3.TextVisible = false;
-            // 
-            // layoutControlItem1
-            // 
-            this.layoutControlItem1.Control = this.btnYenile;
-            this.layoutControlItem1.Location = new System.Drawing.Point(647, 0);
-            this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(204, 40);
-            this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem1.TextVisible = false;
             // 
             // frmgrafikraporkozmetik
             // 
@@ -470,22 +348,11 @@ namespace FoxSoftware.UI.Raporlar
             ((System.ComponentModel.ISupportInitialize)(pieSeriesView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(series1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartSehir)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(xyDiagram1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chartHafta)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(pieSeriesView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.charAltiAy)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(pieSeriesView3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chartBuYil)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(pieSeriesView4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartBuAy)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(pieSeriesView5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(pieSeriesView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartCinsiyet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).EndInit();
@@ -495,16 +362,13 @@ namespace FoxSoftware.UI.Raporlar
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -526,14 +390,8 @@ namespace FoxSoftware.UI.Raporlar
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
         private DevExpress.XtraEditors.SimpleButton btnYenile;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
-        private DevExpress.XtraCharts.ChartControl charAltiAy;
-        private DevExpress.XtraCharts.ChartControl chartBuYil;
         private DevExpress.XtraCharts.ChartControl chartBuAy;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem9;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem10;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem11;
-        private DevExpress.XtraCharts.ChartControl chartHafta;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem12;
         private DevExpress.XtraCharts.ChartControl chartSehir;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem13;
     }

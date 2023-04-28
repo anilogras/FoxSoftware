@@ -1,4 +1,5 @@
-﻿using FoxSoftware.Business.Services;
+﻿using DevExpress.XtraGrid;
+using FoxSoftware.Business.Services;
 using FoxSoftware.DataAccess;
 using System;
 using System.Collections.Generic;
@@ -24,6 +25,15 @@ namespace FoxSoftware.UI.Raporlar
         int satistipi = 0;
         private void BtnRapor_Click(object sender, EventArgs e)
         {
+            GridColumnSummaryItem item1 = new GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Birim Fiyat", "Top: {0}");
+            GridColumnSummaryItem item2 = new GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Toplam Fiyat", "Top: {0}");
+            GridColumnSummaryItem item3 = new GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Maliyet", "Top: {0}");
+            if (gridView1.Columns.Count > 0)
+            {
+                gridView1.Columns["Birim Fiyat"].Summary.Clear();
+                gridView1.Columns["Toplam Fiyat"].Summary.Clear();
+                gridView1.Columns["Maliyet"].Summary.Clear();
+            }
             string ilkTarih = UISqlHelper.DateFormatForSql1(Convert.ToDateTime(dateEdit1.EditValue));
             string sonTarih = UISqlHelper.DateFormatForSql2(Convert.ToDateTime(dateEdit2.EditValue));
             string sorgu = "select convert(varchar, shrkana.Tarih, 105) as 'Sipariş Tarih',shrkana.Id as 'Sipariş ID',urun.Kodu as" +
@@ -39,9 +49,13 @@ namespace FoxSoftware.UI.Raporlar
                 " il on il.Id = adres.IlId left join Ilces ilce on ilce.Id = adres.IlceId left join KokuTurus kokuturu on kokuturu.Id =" +
                 " urun.KokuTuruId left join UrunTurs urunturu on urunturu.Id = urun.UrunTurId left join Markas marka on" +
                 " marka.Id = urun.MarkaId left join TelefonNoes telefon on telefon.Id = mus.TelefonNoId where shrkana.Silinmis=0 and sathrkdet.Silinmis=0 and shrkana.SatisTipi=" +
-                 $"{satistipi.ToString()} and shrkana.Tarih between {ilkTarih} and {sonTarih}";
+                 $"{satistipi.ToString()} and shrkana.Tarih between {ilkTarih} and {sonTarih} order by shrkana.tarih desc";
             var res = _BusinesUOW.SatHrkAnaRepository.GetSQLResult(sorgu);
             gridControl1.DataSource = res;
+            gridView1.Columns["Birim Fiyat"].Summary.Add(item1);
+            gridView1.Columns["Toplam Fiyat"].Summary.Add(item2);
+            gridView1.Columns["Maliyet"].Summary.Add(item3);
+
         }
         private void frmgirilensiparis_Load(object sender, EventArgs e)
         {

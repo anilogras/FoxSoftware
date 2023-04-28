@@ -468,7 +468,7 @@ namespace FoxSoftware.UI
             this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem2);
             this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem22);
             this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem28);
-            this.ribbonPageGroup1.ItemLinks.Add(this.btnTransferForm);
+            this.ribbonPageGroup3.ItemLinks.Add(this.btnTransferForm);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             resources.ApplyResources(this.ribbonPageGroup1, "ribbonPageGroup1");
             // 

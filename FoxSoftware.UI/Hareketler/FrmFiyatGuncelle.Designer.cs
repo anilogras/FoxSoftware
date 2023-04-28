@@ -45,23 +45,23 @@ namespace FoxSoftware.UI.Hareketler
             this.colUrunTur = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colBirimFiyat = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMaliyet = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSatisTipi = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnGuncelle = new DevExpress.XtraEditors.SimpleButton();
             this.cbUrunTipi = new DevExpress.XtraEditors.ComboBoxEdit();
             this.txtBirimFiyat = new DevExpress.XtraEditors.TextEdit();
             this.txtMaliyet = new DevExpress.XtraEditors.TextEdit();
             this.cbKokuTuru = new DevExpress.XtraEditors.LookUpEdit();
             this.cbUrunTuru = new DevExpress.XtraEditors.LookUpEdit();
+            this.btnRaporla = new DevExpress.XtraEditors.SimpleButton();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.btnRaporla = new DevExpress.XtraEditors.SimpleButton();
+            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.colSatisTipi = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).BeginInit();
             this.dataLayoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -75,11 +75,11 @@ namespace FoxSoftware.UI.Hareketler
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             this.SuspendLayout();
             // 
@@ -220,6 +220,13 @@ namespace FoxSoftware.UI.Hareketler
             this.colMaliyet.Visible = true;
             this.colMaliyet.VisibleIndex = 10;
             // 
+            // colSatisTipi
+            // 
+            this.colSatisTipi.FieldName = "SatisTipi";
+            this.colSatisTipi.Name = "colSatisTipi";
+            this.colSatisTipi.Visible = true;
+            this.colSatisTipi.VisibleIndex = 1;
+            // 
             // btnGuncelle
             // 
             this.btnGuncelle.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -305,6 +312,21 @@ namespace FoxSoftware.UI.Hareketler
             this.cbUrunTuru.StyleController = this.dataLayoutControl1;
             this.cbUrunTuru.TabIndex = 16;
             // 
+            // btnRaporla
+            // 
+            this.btnRaporla.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnRaporla.Appearance.Options.UseFont = true;
+            this.btnRaporla.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnRaporla.ImageOptions.Image")));
+            this.btnRaporla.Location = new System.Drawing.Point(513, 12);
+            this.btnRaporla.MaximumSize = new System.Drawing.Size(167, 44);
+            this.btnRaporla.MinimumSize = new System.Drawing.Size(167, 44);
+            this.btnRaporla.Name = "btnRaporla";
+            this.btnRaporla.Size = new System.Drawing.Size(167, 44);
+            this.btnRaporla.StyleController = this.dataLayoutControl1;
+            this.btnRaporla.TabIndex = 20;
+            this.btnRaporla.Text = "Raporla";
+            this.btnRaporla.Click += new System.EventHandler(this.btnRaporla_Click);
+            // 
             // Root
             // 
             this.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
@@ -341,17 +363,6 @@ namespace FoxSoftware.UI.Hareketler
             this.layoutControlItem1.Size = new System.Drawing.Size(167, 24);
             this.layoutControlItem1.Text = "Ürün Türü";
             this.layoutControlItem1.TextSize = new System.Drawing.Size(60, 13);
-            // 
-            // layoutControlItem3
-            // 
-            this.layoutControlItem3.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.layoutControlItem3.AppearanceItemCaption.Options.UseFont = true;
-            this.layoutControlItem3.Control = this.cbUrunTipi;
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(167, 24);
-            this.layoutControlItem3.Text = "Ürün Tipi";
-            this.layoutControlItem3.TextSize = new System.Drawing.Size(60, 13);
             // 
             // layoutControlItem4
             // 
@@ -395,20 +406,16 @@ namespace FoxSoftware.UI.Hareketler
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
             // 
-            // btnRaporla
+            // layoutControlItem3
             // 
-            this.btnRaporla.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnRaporla.Appearance.Options.UseFont = true;
-            this.btnRaporla.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnRaporla.ImageOptions.Image")));
-            this.btnRaporla.Location = new System.Drawing.Point(513, 12);
-            this.btnRaporla.MaximumSize = new System.Drawing.Size(167, 44);
-            this.btnRaporla.MinimumSize = new System.Drawing.Size(167, 44);
-            this.btnRaporla.Name = "btnRaporla";
-            this.btnRaporla.Size = new System.Drawing.Size(167, 44);
-            this.btnRaporla.StyleController = this.dataLayoutControl1;
-            this.btnRaporla.TabIndex = 20;
-            this.btnRaporla.Text = "Raporla";
-            this.btnRaporla.Click += new System.EventHandler(this.btnRaporla_Click);
+            this.layoutControlItem3.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.layoutControlItem3.AppearanceItemCaption.Options.UseFont = true;
+            this.layoutControlItem3.Control = this.cbUrunTipi;
+            this.layoutControlItem3.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem3.Name = "layoutControlItem3";
+            this.layoutControlItem3.Size = new System.Drawing.Size(167, 24);
+            this.layoutControlItem3.Text = "Ürün Tipi";
+            this.layoutControlItem3.TextSize = new System.Drawing.Size(60, 13);
             // 
             // layoutControlItem7
             // 
@@ -419,13 +426,6 @@ namespace FoxSoftware.UI.Hareketler
             this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem7.TextVisible = false;
             // 
-            // colSatisTipi
-            // 
-            this.colSatisTipi.FieldName = "SatisTipi";
-            this.colSatisTipi.Name = "colSatisTipi";
-            this.colSatisTipi.Visible = true;
-            this.colSatisTipi.VisibleIndex = 1;
-            // 
             // FrmFiyatGuncelle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -433,7 +433,7 @@ namespace FoxSoftware.UI.Hareketler
             this.ClientSize = new System.Drawing.Size(977, 593);
             this.Controls.Add(this.dataLayoutControl1);
             this.Name = "FrmFiyatGuncelle";
-            this.Text = "Kargo Takip İşlemi";
+            this.Text = "Toplu Fiyat Güncelleme Ekranı";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).EndInit();
             this.dataLayoutControl1.ResumeLayout(false);
@@ -448,11 +448,11 @@ namespace FoxSoftware.UI.Hareketler
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             this.ResumeLayout(false);
 

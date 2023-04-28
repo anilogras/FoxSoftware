@@ -1,4 +1,5 @@
-﻿using FoxSoftware.Business.Services;
+﻿using DevExpress.XtraGrid;
+using FoxSoftware.Business.Services;
 using FoxSoftware.DataAccess;
 using System;
 using System.Collections.Generic;
@@ -38,11 +39,20 @@ namespace FoxSoftware.UI.Raporlar
         int satistipi = 0;
         private void SimpleButton1_Click(object sender, EventArgs e)
         {
+            GridColumnSummaryItem item1 = new GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Birim Fiyat", "Top: {0}");
+            GridColumnSummaryItem item2 = new GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Toplam Fiyat", "Top: {0}");
+            if (gridView1.Columns.Count > 0)
+            {
+                gridView1.Columns["Birim Fiyat"].Summary.Clear();
+                gridView1.Columns["Toplam Fiyat"].Summary.Clear();
+            }
             string ilkTarih = UISqlHelper.DateFormatForSql1(Convert.ToDateTime(dateEdit1.EditValue));
             string sonTarih = UISqlHelper.DateFormatForSql2(Convert.ToDateTime(dateEdit2.EditValue));
             string sorgu = "select convert(varchar, shrkana.Tarih, 105) as 'Sipariş Tarih',shrkana.Id as 'Sipariş ID',urun.Kodu as 'Ürün Kodu',urun.Adi as 'Ürün Adı',birim.Adi as 'Birim',case when urun.Cinsiyet = 1 then 'Erkek' when urun.Cinsiyet = 2 then 'Kadın' when urun.Cinsiyet = 3 then 'Unisex' end as 'Cinsiyet',marka.Adi as 'Marka',urunturu.Adi as 'Ürün Türü',stkhrkdet.Miktar as'Miktar',stkhrkdet.BirimFiyat as 'Birim Fiyat',stkhrkdet.BirimFiyat*stkhrkdet.Miktar as 'Toplam Fiyat',firma.Adi as 'Firma Adı' from StokHrkAnas shrkana left join StokHrkDetays stkhrkdet on stkhrkdet.StokHrkAnaId = shrkana.Id left join Firmas firma on firma.Id = shrkana.FirmaId left join Uruns urun on urun.Id = stkhrkdet.UrunId left join Birims birim on urun.BirimId =birim.Id left join KokuTurus kokuturu on kokuturu.Id =urun.KokuTuruId left join UrunTurs urunturu on urunturu.Id = urun.UrunTurId left join Markas marka on marka.Id = urun.MarkaId where shrkana.Silinmis=0 and stkhrkdet.Silinmis=0 and shrkana.SatisTipi=" + satistipi.ToString()+" and shrkana.Tarih >= "+ilkTarih + " and shrkana.Tarih <= "+sonTarih;
              var res = _BusinesUOW.SatHrkAnaRepository.GetSQLResult(sorgu);
             gridControl1.DataSource = res;
+            gridView1.Columns["Birim Fiyat"].Summary.Add(item1);
+            gridView1.Columns["Toplam Fiyat"].Summary.Add(item2);
         }
         private void frmstokalim_Load(object sender, EventArgs e)
         {

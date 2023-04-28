@@ -113,9 +113,30 @@
     <Compile Include="Migrations\202209121606535_transfer form sonrasi.designer.cs">
       <DependentUpon>202209121606535_transfer form sonrasi.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202304271242408_odemeyonmi.cs" />
+    <Compile Include="Migrations\202304271242408_odemeyonmi.designer.cs">
+      <DependentUpon>202304271242408_odemeyonmi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202304271247005_aa.cs" />
+    <Compile Include="Migrations\202304271247005_aa.designer.cs">
+      <DependentUpon>202304271247005_aa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202304271247478_ddd.cs" />
+    <Compile Include="Migrations\202304271247478_ddd.designer.cs">
+      <DependentUpon>202304271247478_ddd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202304271314391_oooo.cs" />
+    <Compile Include="Migrations\202304271314391_oooo.designer.cs">
+      <DependentUpon>202304271314391_oooo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202304271316094_zzzzzzz.cs" />
+    <Compile Include="Migrations\202304271316094_zzzzzzz.designer.cs">
+      <DependentUpon>202304271316094_zzzzzzz.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\AdresBilgisiRepository.cs" />
+    <Compile Include="Repositories\OdemeYontemiRepository.cs" />
     <Compile Include="Repositories\BirimRepository.cs" />
     <Compile Include="Repositories\EMailRepository.cs" />
     <Compile Include="Repositories\FirmaRepository.cs" />
@@ -193,6 +214,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202209121606535_transfer form sonrasi.resx">
       <DependentUpon>202209121606535_transfer form sonrasi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202304271242408_odemeyonmi.resx">
+      <DependentUpon>202304271242408_odemeyonmi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202304271247005_aa.resx">
+      <DependentUpon>202304271247005_aa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202304271247478_ddd.resx">
+      <DependentUpon>202304271247478_ddd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202304271314391_oooo.resx">
+      <DependentUpon>202304271314391_oooo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202304271316094_zzzzzzz.resx">
+      <DependentUpon>202304271316094_zzzzzzz.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

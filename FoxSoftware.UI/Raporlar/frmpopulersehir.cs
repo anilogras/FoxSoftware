@@ -51,7 +51,8 @@ namespace FoxSoftware.UI.Raporlar
             string sorgu = "Select sehir.Adi as 'Şehir',ilce.Adi as 'İlçe',sum(shrkdetay.Miktar) as 'Toplam Miktar',sum(shrkdetay.Miktar)*sum(shrkdetay.BirimFiyat) as 'Toplam Tutar'from SatHrkAnas shrkana left join SatHrkDetays shrkdetay on shrkdetay.SatHrkAnaId = shrkana.Id left join Musteris mus on mus.Id = shrkana.MusteriId left join AdresBilgisis adres on adres.Id = mus.AdresId left join Ils sehir on sehir.Id = adres.IlId left join Ilces ilce on ilce.Id = adres.IlceId " +
                 "where shrkana.Silinmis=0 and shrkdetay.Silinmis=0 and shrkana.SatisTipi=" +
                  $"{satistipi.ToString()} and shrkana.Tarih between {ilkTarih} and {sonTarih}"+
-                "group by sehir.Adi,ilce.Adi";
+                "group by sehir.Adi,ilce.Adi "+
+                "order by sum(shrkdetay.Miktar) desc";
             var res = _BusinesUOW.SatHrkAnaRepository.GetSQLResult(sorgu);
             gridControl1.DataSource = res;
         }

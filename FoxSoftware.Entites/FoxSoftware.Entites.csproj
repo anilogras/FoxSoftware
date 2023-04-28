@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Concreate\AdresBilgisi.cs" />
+    <Compile Include="Concreate\OdemeYontemi.cs" />
     <Compile Include="Concreate\Birim.cs" />
     <Compile Include="Concreate\Email.cs" />
     <Compile Include="Concreate\Firma.cs" />

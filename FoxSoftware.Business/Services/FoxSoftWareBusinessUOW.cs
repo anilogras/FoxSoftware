@@ -38,9 +38,11 @@ namespace FoxSoftware.Business.Services
             UrunTurRepository = new UrunTurRepository(_context);
             StokHrkAnaRepository = new StokHrkAnaRepository(_context);
             StokHrkDetayRepository = new StokHrkDetayRepository(_context);
-            BirimRepository = new BirimRepository(_context);
+            OdemeYontemiRepository = new OdemeYontemiRepository(_context);
+
         }
         public BirimRepository BirimRepository { get; set; }
+        public OdemeYontemiRepository OdemeYontemiRepository { get; set; }
         public AdresBilgisiRepository AdresBilgisiRepository { get; set; }
         public EMailRepository EMailRepository { get; set; }
         public FirmaRepository FirmaRepository { get; set; }

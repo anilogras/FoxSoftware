@@ -34,6 +34,7 @@ namespace FoxSoftware.UI.Raporlar
             DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colSira = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMiktar = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colBirimFiyat = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colToplamFiyat = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -55,6 +56,7 @@ namespace FoxSoftware.UI.Raporlar
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSilinmis = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colOdemeYontemiId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.dataLayoutControl1 = new DevExpress.XtraDataLayout.DataLayoutControl();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
@@ -63,7 +65,6 @@ namespace FoxSoftware.UI.Raporlar
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.satHrkDetayBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.satHrkAnaBindingSource)).BeginInit();
@@ -98,6 +99,14 @@ namespace FoxSoftware.UI.Raporlar
             this.colSira.Name = "colSira";
             this.colSira.Visible = true;
             this.colSira.VisibleIndex = 0;
+            // 
+            // gridColumn6
+            // 
+            this.gridColumn6.Caption = "Ürün Adı";
+            this.gridColumn6.FieldName = "Urun.Adi";
+            this.gridColumn6.Name = "gridColumn6";
+            this.gridColumn6.Visible = true;
+            this.gridColumn6.VisibleIndex = 1;
             // 
             // colMiktar
             // 
@@ -157,7 +166,8 @@ namespace FoxSoftware.UI.Raporlar
             this.gridColumn3,
             this.gridColumn2,
             this.gridColumn1,
-            this.colSilinmis});
+            this.colSilinmis,
+            this.colOdemeYontemiId});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             // 
@@ -263,6 +273,14 @@ namespace FoxSoftware.UI.Raporlar
             this.colSilinmis.FieldName = "Silinmis";
             this.colSilinmis.Name = "colSilinmis";
             // 
+            // colOdemeYontemiId
+            // 
+            this.colOdemeYontemiId.Caption = "Ödeme Yöntemi";
+            this.colOdemeYontemiId.FieldName = "OdemeYontemi.Adi";
+            this.colOdemeYontemiId.Name = "colOdemeYontemiId";
+            this.colOdemeYontemiId.Visible = true;
+            this.colOdemeYontemiId.VisibleIndex = 11;
+            // 
             // ribbonPage2
             // 
             this.ribbonPage2.Name = "ribbonPage2";
@@ -335,14 +353,6 @@ namespace FoxSoftware.UI.Raporlar
             // 
             this.satHrkDetayBindingSource.DataSource = typeof(FoxSoftware.Entites.Concreate.SatHrkDetay);
             // 
-            // gridColumn6
-            // 
-            this.gridColumn6.Caption = "Ürün Adı";
-            this.gridColumn6.FieldName = "Urun.Adi";
-            this.gridColumn6.Name = "gridColumn6";
-            this.gridColumn6.Visible = true;
-            this.gridColumn6.VisibleIndex = 1;
-            // 
             // sathrkpredicate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -402,5 +412,6 @@ namespace FoxSoftware.UI.Raporlar
         private DevExpress.XtraGrid.Columns.GridColumn colBirimFiyat;
         private DevExpress.XtraGrid.Columns.GridColumn colToplamFiyat;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
+        private DevExpress.XtraGrid.Columns.GridColumn colOdemeYontemiId;
     }
 }

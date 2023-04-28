@@ -20,6 +20,11 @@ namespace FoxSoftware.Entites.Concreate
             get;
             set;
         }
+        public int? OdemeYontemiId
+        {
+            get;
+            set;
+        }
         public DateTime Tarih
         {
             get;
@@ -35,6 +40,7 @@ namespace FoxSoftware.Entites.Concreate
             get;
             set;
         }
+        public virtual OdemeYontemi OdemeYontemi { get; set; }
         public virtual Musteri Musteri { get; set; }
         public bool KargoDurumu { get; set; }
         public SatisTipi SatisTipi { get; set; }

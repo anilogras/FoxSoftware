@@ -82,6 +82,10 @@ namespace FoxSoftware.UI.Hareketler
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.SaatTimeEdit = new DevExpress.XtraEditors.TimeEdit();
+            this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.lkpOdemeYontemi = new DevExpress.XtraEditors.LookUpEdit();
+            this.ItemForOdemeYontemiId = new DevExpress.XtraLayout.LayoutControlItem();
+            this.emptySpaceItem9 = new DevExpress.XtraLayout.EmptySpaceItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).BeginInit();
             this.dataLayoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TarihDateEdit.Properties.CalendarTimeProperties)).BeginInit();
@@ -120,6 +124,10 @@ namespace FoxSoftware.UI.Hareketler
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SaatTimeEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lkpOdemeYontemi.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemForOdemeYontemiId)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem9)).BeginInit();
             this.SuspendLayout();
             // 
             // dataLayoutControl1
@@ -137,6 +145,7 @@ namespace FoxSoftware.UI.Hareketler
             this.dataLayoutControl1.Controls.Add(this.SatHrkDetaylarGridControl);
             this.dataLayoutControl1.Controls.Add(this.btnBasla);
             this.dataLayoutControl1.Controls.Add(this.btnYeniKayit);
+            this.dataLayoutControl1.Controls.Add(this.lkpOdemeYontemi);
             this.dataLayoutControl1.DataSource = this.satHrkAnaBindingSource;
             this.dataLayoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataLayoutControl1.Location = new System.Drawing.Point(0, 0);
@@ -151,7 +160,7 @@ namespace FoxSoftware.UI.Hareketler
             this.simpleButton2.Appearance.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F);
             this.simpleButton2.Appearance.Options.UseFont = true;
             this.simpleButton2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
-            this.simpleButton2.Location = new System.Drawing.Point(166, 508);
+            this.simpleButton2.Location = new System.Drawing.Point(166, 484);
             this.simpleButton2.MaximumSize = new System.Drawing.Size(150, 40);
             this.simpleButton2.MinimumSize = new System.Drawing.Size(150, 40);
             this.simpleButton2.Name = "simpleButton2";
@@ -166,7 +175,7 @@ namespace FoxSoftware.UI.Hareketler
             this.kaydet.Appearance.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11F);
             this.kaydet.Appearance.Options.UseFont = true;
             this.kaydet.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("kaydet.ImageOptions.Image")));
-            this.kaydet.Location = new System.Drawing.Point(12, 508);
+            this.kaydet.Location = new System.Drawing.Point(12, 484);
             this.kaydet.MaximumSize = new System.Drawing.Size(150, 40);
             this.kaydet.MinimumSize = new System.Drawing.Size(150, 40);
             this.kaydet.Name = "kaydet";
@@ -179,7 +188,7 @@ namespace FoxSoftware.UI.Hareketler
             // 
             this.TarihDateEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.satHrkAnaBindingSource, "Tarih", true));
             this.TarihDateEdit.EditValue = null;
-            this.TarihDateEdit.Location = new System.Drawing.Point(102, 36);
+            this.TarihDateEdit.Location = new System.Drawing.Point(105, 36);
             this.TarihDateEdit.MaximumSize = new System.Drawing.Size(100, 20);
             this.TarihDateEdit.MinimumSize = new System.Drawing.Size(100, 20);
             this.TarihDateEdit.Name = "TarihDateEdit";
@@ -200,7 +209,7 @@ namespace FoxSoftware.UI.Hareketler
             // 
             this.SaatTimeSpanEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.satHrkAnaBindingSource, "Saat", true));
             this.SaatTimeSpanEdit.EditValue = System.TimeSpan.Parse("00:00:00");
-            this.SaatTimeSpanEdit.Location = new System.Drawing.Point(102, 60);
+            this.SaatTimeSpanEdit.Location = new System.Drawing.Point(105, 60);
             this.SaatTimeSpanEdit.MaximumSize = new System.Drawing.Size(50, 20);
             this.SaatTimeSpanEdit.MinimumSize = new System.Drawing.Size(80, 20);
             this.SaatTimeSpanEdit.Name = "SaatTimeSpanEdit";
@@ -213,7 +222,7 @@ namespace FoxSoftware.UI.Hareketler
             // KargoTakipNoTextEdit
             // 
             this.KargoTakipNoTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.satHrkAnaBindingSource, "KargoTakipNo", true));
-            this.KargoTakipNoTextEdit.Location = new System.Drawing.Point(321, 36);
+            this.KargoTakipNoTextEdit.Location = new System.Drawing.Point(327, 36);
             this.KargoTakipNoTextEdit.MaximumSize = new System.Drawing.Size(130, 20);
             this.KargoTakipNoTextEdit.MinimumSize = new System.Drawing.Size(130, 20);
             this.KargoTakipNoTextEdit.Name = "KargoTakipNoTextEdit";
@@ -224,7 +233,7 @@ namespace FoxSoftware.UI.Hareketler
             // SatisTipiComboBoxEdit
             // 
             this.SatisTipiComboBoxEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.satHrkAnaBindingSource, "SatisTipi", true));
-            this.SatisTipiComboBoxEdit.Location = new System.Drawing.Point(102, 12);
+            this.SatisTipiComboBoxEdit.Location = new System.Drawing.Point(105, 12);
             this.SatisTipiComboBoxEdit.MaximumSize = new System.Drawing.Size(100, 20);
             this.SatisTipiComboBoxEdit.MinimumSize = new System.Drawing.Size(100, 20);
             this.SatisTipiComboBoxEdit.Name = "SatisTipiComboBoxEdit";
@@ -244,7 +253,7 @@ namespace FoxSoftware.UI.Hareketler
             // 
             this.checkEdit1.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.satHrkAnaBindingSource, "KargoDurumu", true));
             this.checkEdit1.EditValue = true;
-            this.checkEdit1.Location = new System.Drawing.Point(231, 12);
+            this.checkEdit1.Location = new System.Drawing.Point(234, 12);
             this.checkEdit1.MaximumSize = new System.Drawing.Size(130, 20);
             this.checkEdit1.MinimumSize = new System.Drawing.Size(130, 20);
             this.checkEdit1.Name = "checkEdit1";
@@ -259,13 +268,13 @@ namespace FoxSoftware.UI.Hareketler
             // lkpMusteri
             // 
             this.lkpMusteri.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.satHrkAnaBindingSource, "MusteriId", true));
-            this.lkpMusteri.Location = new System.Drawing.Point(102, 84);
+            this.lkpMusteri.Location = new System.Drawing.Point(105, 84);
             this.lkpMusteri.Name = "lkpMusteri";
             this.lkpMusteri.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.lkpMusteri.Properties.NullText = "";
             this.lkpMusteri.Properties.PopupSizeable = false;
-            this.lkpMusteri.Size = new System.Drawing.Size(686, 20);
+            this.lkpMusteri.Size = new System.Drawing.Size(683, 20);
             this.lkpMusteri.StyleController = this.dataLayoutControl1;
             this.lkpMusteri.TabIndex = 3;
             // 
@@ -280,7 +289,7 @@ namespace FoxSoftware.UI.Hareketler
             this.SatHrkDetaylarGridControl.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemLookUpEdit1,
             this.repositoryItemButtonEdit1});
-            this.SatHrkDetaylarGridControl.Size = new System.Drawing.Size(776, 352);
+            this.SatHrkDetaylarGridControl.Size = new System.Drawing.Size(776, 328);
             this.SatHrkDetaylarGridControl.TabIndex = 17;
             this.SatHrkDetaylarGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -431,7 +440,10 @@ namespace FoxSoftware.UI.Hareketler
             this.emptySpaceItem6,
             this.emptySpaceItem7,
             this.lyGrid,
-            this.emptySpaceItem8});
+            this.emptySpaceItem8,
+            this.layoutControlGroup2,
+            this.ItemForOdemeYontemiId,
+            this.emptySpaceItem9});
             this.Root.Name = "Root";
             this.Root.Size = new System.Drawing.Size(800, 560);
             this.Root.TextVisible = false;
@@ -439,7 +451,7 @@ namespace FoxSoftware.UI.Hareketler
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.kaydet;
-            this.layoutControlItem4.Location = new System.Drawing.Point(0, 496);
+            this.layoutControlItem4.Location = new System.Drawing.Point(0, 472);
             this.layoutControlItem4.Name = "layoutControlItem4";
             this.layoutControlItem4.Size = new System.Drawing.Size(154, 44);
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
@@ -448,7 +460,7 @@ namespace FoxSoftware.UI.Hareketler
             // layoutControlItem5
             // 
             this.layoutControlItem5.Control = this.simpleButton2;
-            this.layoutControlItem5.Location = new System.Drawing.Point(154, 496);
+            this.layoutControlItem5.Location = new System.Drawing.Point(154, 472);
             this.layoutControlItem5.Name = "layoutControlItem5";
             this.layoutControlItem5.Size = new System.Drawing.Size(154, 44);
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
@@ -462,14 +474,14 @@ namespace FoxSoftware.UI.Hareketler
             this.ItemForSatisTipi.CustomizationFormText = "Satış Tipi";
             this.ItemForSatisTipi.Location = new System.Drawing.Point(0, 0);
             this.ItemForSatisTipi.Name = "ItemForSatisTipi";
-            this.ItemForSatisTipi.Size = new System.Drawing.Size(194, 24);
+            this.ItemForSatisTipi.Size = new System.Drawing.Size(197, 24);
             this.ItemForSatisTipi.Text = "Ürün Tipi";
-            this.ItemForSatisTipi.TextSize = new System.Drawing.Size(87, 13);
+            this.ItemForSatisTipi.TextSize = new System.Drawing.Size(90, 13);
             // 
             // checkEditKargoVerildi
             // 
             this.checkEditKargoVerildi.Control = this.checkEdit1;
-            this.checkEditKargoVerildi.Location = new System.Drawing.Point(219, 0);
+            this.checkEditKargoVerildi.Location = new System.Drawing.Point(222, 0);
             this.checkEditKargoVerildi.Name = "checkEditKargoVerildi";
             this.checkEditKargoVerildi.Size = new System.Drawing.Size(134, 24);
             this.checkEditKargoVerildi.TextSize = new System.Drawing.Size(0, 0);
@@ -480,11 +492,11 @@ namespace FoxSoftware.UI.Hareketler
             this.ItemForKargoTakipNo.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.ItemForKargoTakipNo.AppearanceItemCaption.Options.UseFont = true;
             this.ItemForKargoTakipNo.Control = this.KargoTakipNoTextEdit;
-            this.ItemForKargoTakipNo.Location = new System.Drawing.Point(219, 24);
+            this.ItemForKargoTakipNo.Location = new System.Drawing.Point(222, 24);
             this.ItemForKargoTakipNo.Name = "ItemForKargoTakipNo";
-            this.ItemForKargoTakipNo.Size = new System.Drawing.Size(224, 24);
+            this.ItemForKargoTakipNo.Size = new System.Drawing.Size(227, 24);
             this.ItemForKargoTakipNo.Text = "Kargo Takip No";
-            this.ItemForKargoTakipNo.TextSize = new System.Drawing.Size(87, 13);
+            this.ItemForKargoTakipNo.TextSize = new System.Drawing.Size(90, 13);
             // 
             // ItemForSaat
             // 
@@ -493,9 +505,9 @@ namespace FoxSoftware.UI.Hareketler
             this.ItemForSaat.Control = this.SaatTimeSpanEdit;
             this.ItemForSaat.Location = new System.Drawing.Point(0, 48);
             this.ItemForSaat.Name = "ItemForSaat";
-            this.ItemForSaat.Size = new System.Drawing.Size(174, 24);
+            this.ItemForSaat.Size = new System.Drawing.Size(177, 24);
             this.ItemForSaat.Text = "Saat";
-            this.ItemForSaat.TextSize = new System.Drawing.Size(87, 13);
+            this.ItemForSaat.TextSize = new System.Drawing.Size(90, 13);
             // 
             // ItemForTarih
             // 
@@ -504,14 +516,14 @@ namespace FoxSoftware.UI.Hareketler
             this.ItemForTarih.Control = this.TarihDateEdit;
             this.ItemForTarih.Location = new System.Drawing.Point(0, 24);
             this.ItemForTarih.Name = "ItemForTarih";
-            this.ItemForTarih.Size = new System.Drawing.Size(194, 24);
+            this.ItemForTarih.Size = new System.Drawing.Size(197, 24);
             this.ItemForTarih.Text = "Tarih";
-            this.ItemForTarih.TextSize = new System.Drawing.Size(87, 13);
+            this.ItemForTarih.TextSize = new System.Drawing.Size(90, 13);
             // 
             // emptySpaceItem2
             // 
             this.emptySpaceItem2.AllowHotTrack = false;
-            this.emptySpaceItem2.Location = new System.Drawing.Point(194, 24);
+            this.emptySpaceItem2.Location = new System.Drawing.Point(197, 24);
             this.emptySpaceItem2.Name = "emptySpaceItem2";
             this.emptySpaceItem2.Size = new System.Drawing.Size(25, 24);
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
@@ -519,7 +531,7 @@ namespace FoxSoftware.UI.Hareketler
             // emptySpaceItem3
             // 
             this.emptySpaceItem3.AllowHotTrack = false;
-            this.emptySpaceItem3.Location = new System.Drawing.Point(194, 0);
+            this.emptySpaceItem3.Location = new System.Drawing.Point(197, 0);
             this.emptySpaceItem3.Name = "emptySpaceItem3";
             this.emptySpaceItem3.Size = new System.Drawing.Size(25, 24);
             this.emptySpaceItem3.TextSize = new System.Drawing.Size(0, 0);
@@ -533,22 +545,22 @@ namespace FoxSoftware.UI.Hareketler
             this.layoutControlItem2.Name = "layoutControlItem2";
             this.layoutControlItem2.Size = new System.Drawing.Size(780, 24);
             this.layoutControlItem2.Text = "Müşteri Bilgileri";
-            this.layoutControlItem2.TextSize = new System.Drawing.Size(87, 13);
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(90, 13);
             // 
             // emptySpaceItem4
             // 
             this.emptySpaceItem4.AllowHotTrack = false;
-            this.emptySpaceItem4.Location = new System.Drawing.Point(443, 24);
+            this.emptySpaceItem4.Location = new System.Drawing.Point(449, 24);
             this.emptySpaceItem4.Name = "emptySpaceItem4";
-            this.emptySpaceItem4.Size = new System.Drawing.Size(337, 24);
+            this.emptySpaceItem4.Size = new System.Drawing.Size(331, 24);
             this.emptySpaceItem4.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem5
             // 
             this.emptySpaceItem5.AllowHotTrack = false;
-            this.emptySpaceItem5.Location = new System.Drawing.Point(353, 0);
+            this.emptySpaceItem5.Location = new System.Drawing.Point(356, 0);
             this.emptySpaceItem5.Name = "emptySpaceItem5";
-            this.emptySpaceItem5.Size = new System.Drawing.Size(427, 24);
+            this.emptySpaceItem5.Size = new System.Drawing.Size(424, 24);
             this.emptySpaceItem5.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem1
@@ -580,9 +592,9 @@ namespace FoxSoftware.UI.Hareketler
             // emptySpaceItem7
             // 
             this.emptySpaceItem7.AllowHotTrack = false;
-            this.emptySpaceItem7.Location = new System.Drawing.Point(174, 48);
+            this.emptySpaceItem7.Location = new System.Drawing.Point(449, 48);
             this.emptySpaceItem7.Name = "emptySpaceItem7";
-            this.emptySpaceItem7.Size = new System.Drawing.Size(606, 24);
+            this.emptySpaceItem7.Size = new System.Drawing.Size(331, 24);
             this.emptySpaceItem7.TextSize = new System.Drawing.Size(0, 0);
             // 
             // lyGrid
@@ -593,14 +605,14 @@ namespace FoxSoftware.UI.Hareketler
             this.ItemForSatHrkDetaylar});
             this.lyGrid.Location = new System.Drawing.Point(0, 140);
             this.lyGrid.Name = "lyGrid";
-            this.lyGrid.Size = new System.Drawing.Size(780, 356);
+            this.lyGrid.Size = new System.Drawing.Size(780, 332);
             // 
             // ItemForSatHrkDetaylar
             // 
             this.ItemForSatHrkDetaylar.Control = this.SatHrkDetaylarGridControl;
             this.ItemForSatHrkDetaylar.Location = new System.Drawing.Point(0, 0);
             this.ItemForSatHrkDetaylar.Name = "ItemForSatHrkDetaylar";
-            this.ItemForSatHrkDetaylar.Size = new System.Drawing.Size(780, 356);
+            this.ItemForSatHrkDetaylar.Size = new System.Drawing.Size(780, 332);
             this.ItemForSatHrkDetaylar.StartNewLine = true;
             this.ItemForSatHrkDetaylar.Text = "Sat Hrk Detaylar";
             this.ItemForSatHrkDetaylar.TextSize = new System.Drawing.Size(0, 0);
@@ -609,7 +621,7 @@ namespace FoxSoftware.UI.Hareketler
             // emptySpaceItem8
             // 
             this.emptySpaceItem8.AllowHotTrack = false;
-            this.emptySpaceItem8.Location = new System.Drawing.Point(308, 496);
+            this.emptySpaceItem8.Location = new System.Drawing.Point(308, 472);
             this.emptySpaceItem8.Name = "emptySpaceItem8";
             this.emptySpaceItem8.Size = new System.Drawing.Size(472, 44);
             this.emptySpaceItem8.TextSize = new System.Drawing.Size(0, 0);
@@ -642,6 +654,50 @@ namespace FoxSoftware.UI.Hareketler
             this.SaatTimeEdit.Properties.TimeEditStyle = DevExpress.XtraEditors.Repository.TimeEditStyle.TouchUI;
             this.SaatTimeEdit.Size = new System.Drawing.Size(686, 20);
             this.SaatTimeEdit.TabIndex = 20;
+            // 
+            // layoutControlGroup2
+            // 
+            this.layoutControlGroup2.AllowDrawBackground = false;
+            this.layoutControlGroup2.GroupBordersVisible = false;
+            this.layoutControlGroup2.Location = new System.Drawing.Point(0, 516);
+            this.layoutControlGroup2.Name = "autoGeneratedGroup0";
+            this.layoutControlGroup2.Size = new System.Drawing.Size(780, 24);
+            // 
+            // lkpOdemeYontemi
+            // 
+            this.lkpOdemeYontemi.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.satHrkAnaBindingSource, "OdemeYontemiId", true));
+            this.lkpOdemeYontemi.Location = new System.Drawing.Point(327, 60);
+            this.lkpOdemeYontemi.MaximumSize = new System.Drawing.Size(130, 20);
+            this.lkpOdemeYontemi.MinimumSize = new System.Drawing.Size(130, 20);
+            this.lkpOdemeYontemi.Name = "lkpOdemeYontemi";
+            this.lkpOdemeYontemi.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
+            this.lkpOdemeYontemi.Properties.Appearance.Options.UseTextOptions = true;
+            this.lkpOdemeYontemi.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.lkpOdemeYontemi.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lkpOdemeYontemi.Properties.NullText = "";
+            this.lkpOdemeYontemi.Size = new System.Drawing.Size(130, 20);
+            this.lkpOdemeYontemi.StyleController = this.dataLayoutControl1;
+            this.lkpOdemeYontemi.TabIndex = 20;
+            // 
+            // ItemForOdemeYontemiId
+            // 
+            this.ItemForOdemeYontemiId.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.ItemForOdemeYontemiId.AppearanceItemCaption.Options.UseFont = true;
+            this.ItemForOdemeYontemiId.Control = this.lkpOdemeYontemi;
+            this.ItemForOdemeYontemiId.Location = new System.Drawing.Point(222, 48);
+            this.ItemForOdemeYontemiId.Name = "ItemForOdemeYontemiId";
+            this.ItemForOdemeYontemiId.Size = new System.Drawing.Size(227, 24);
+            this.ItemForOdemeYontemiId.Text = "Ödeme Yöntemi";
+            this.ItemForOdemeYontemiId.TextSize = new System.Drawing.Size(90, 13);
+            // 
+            // emptySpaceItem9
+            // 
+            this.emptySpaceItem9.AllowHotTrack = false;
+            this.emptySpaceItem9.Location = new System.Drawing.Point(177, 48);
+            this.emptySpaceItem9.Name = "emptySpaceItem9";
+            this.emptySpaceItem9.Size = new System.Drawing.Size(45, 24);
+            this.emptySpaceItem9.TextSize = new System.Drawing.Size(0, 0);
             // 
             // FrmSatisHrk
             // 
@@ -690,6 +746,10 @@ namespace FoxSoftware.UI.Hareketler
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SaatTimeEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lkpOdemeYontemi.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemForOdemeYontemiId)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem9)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -742,5 +802,9 @@ namespace FoxSoftware.UI.Hareketler
         private DevExpress.XtraEditors.TimeEdit SaatTimeEdit;
         private DevExpress.XtraLayout.LayoutControlGroup lyGrid;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem8;
+        private DevExpress.XtraEditors.LookUpEdit lkpOdemeYontemi;
+        private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup2;
+        private DevExpress.XtraLayout.LayoutControlItem ItemForOdemeYontemiId;
+        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem9;
     }
 }
